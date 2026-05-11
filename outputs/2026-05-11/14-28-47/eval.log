@@ -1,0 +1,3 @@
+[2026-05-11 14:30:31,976][datasets][INFO] - JAX version 0.6.2 available.
+[2026-05-11 14:31:25,405][root][INFO] - Cached 'action' from '/gscratch/rao/alexchin/stablewm/datasets/tworoom.h5'
+[2026-05-11 14:32:13,192][root][INFO] - Cached 'proprio' from '/gscratch/rao/alexchin/stablewm/datasets/tworoom.h5'
