@@ -1,0 +1,1 @@
+{"hparams/lr_default_0":7.17720524789911e-07,"_timestamp":1.7782016292797852e+09,"_runtime":689,"trainer/global_step":199,"_wandb":{"runtime":689},"epoch":0,"fit/loss":3.1678450107574463,"_step":3,"fit/sigreg_loss":32.25,"fit/pred_loss":0.2615949511528015}

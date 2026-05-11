@@ -1,0 +1,5 @@
+- data=pusht
+- num_workers=14
+- loader.prefetch_factor=6
+- wandb.config.entity=jepa-experiments
+- wandb.config.project=lewm-pusht

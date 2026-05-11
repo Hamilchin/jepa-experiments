@@ -1,0 +1,21 @@
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/connector.py:571: `precision=bf16` is supported for historical reasons but its usage is discouraged. Please set your precision to bf16-mixed instead!
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python train.py data=pusht wandb.config.entity=jepa-experim ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+[32m17:34:26[0m | [1mINFO [0m | [36menv_info.py [0m| [1m  EnvironmentDumpCallback initialized (filename=environment.json, async=True)[0m
+[32m17:34:26[0m | [1mINFO [0m | [36mutils.py    [0m| [1m── HuggingFaceCheckpoint ─────────────────────────[0m
+[32m17:34:26[0m | [1mINFO [0m | [36mhf_models.py[0m| [1m  save_dir: <cyan>hf_exports</cyan>[0m
+[32m17:34:26[0m | [1mINFO [0m | [36mhf_models.py[0m| [1m  per_step: <cyan>False</cyan>  (False ⇒ overwrite single 'last/' subdir; True ⇒ keep step_N/)[0m
+Adding 13 callbacks from entry point 'stablepretraining_callbacks': RichProgressBar, ModuleRegistryCallback, LoggingCallback, EnvironmentDumpCallback, TrainerInfo, SklearnCheckpoint, WandbCheckpoint, TrackioCheckpoint, SwanLabCheckpoint, ModuleSummary, SLURMInfo, LogUnusedParametersOnce, HuggingFaceCheckpointCallback
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+[32m17:34:26[0m | [33m[1mWARN [0m | [36mmanager.py  [0m| [33m[1mUser didn't specify seed, runs won't be exactly reproducible![0m
+Error executing job with overrides: ['data=pusht', 'wandb.config.entity=jepa-experiments', 'wandb.config.project=lewm-pusht']
+Traceback (most recent call last):
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/train.py", line 171, in run
+    manager = spt.Manager(
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/manager.py", line 344, in __init__
+    raise FileNotFoundError(
+FileNotFoundError: `ckpt_path` was set to /gscratch/rao/alexchin/stablewm/lewm_weights.ckpt but no such file exists. Refusing to silently start training from scratch.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

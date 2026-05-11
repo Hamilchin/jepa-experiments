@@ -1,0 +1,70 @@
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/connector.py:571: `precision=bf16` is supported for historical reasons but its usage is discouraged. Please set your precision to bf16-mixed instead!
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python train.py data=pusht num_workers=12 loader.batch_size ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+22:36:33 | INFO  | env_info.py |   EnvironmentDumpCallback initialized (filename=environment.json, async=True)
+22:36:33 | INFO  | utils.py    | ── HuggingFaceCheckpoint ─────────────────────────
+22:36:33 | INFO  | hf_models.py|   save_dir: <cyan>hf_exports</cyan>
+22:36:33 | INFO  | hf_models.py|   per_step: <cyan>False</cyan>  (False ⇒ overwrite single 'last/' subdir; True ⇒ keep step_N/)
+Adding 13 callbacks from entry point 'stablepretraining_callbacks': PrintProgressBar, ModuleRegistryCallback, LoggingCallback, EnvironmentDumpCallback, TrainerInfo, SklearnCheckpoint, WandbCheckpoint, TrackioCheckpoint, SwanLabCheckpoint, ModuleSummary, SLURMInfo, LogUnusedParametersOnce, HuggingFaceCheckpointCallback
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+22:36:33 | WARN  | manager.py  | User didn't specify seed, runs won't be exactly reproducible!
+22:36:33 | INFO  | manager.py  |   Manager init: ckpt_path=None, weights_only=True
+22:36:33 | INFO  | utils.py    | ── WorkingDirectory ──────────────────────────────
+22:36:33 | INFO  | manager.py  |   cwd: /mmfs1/gscratch/rao/alexchin/le-wm
+22:36:33 | INFO  | utils.py    | ── Seed ──────────────────────────────────────────
+22:36:33 | INFO  | manager.py  |   seed: None
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/utilities/seed.py:44: No seed found, seed set to 0
+[rank: 0] Seed set to 0
+22:36:34 | INFO  | utils.py    | ── RunDirectory ──────────────────────────────────
+22:36:34 | INFO  | manager.py  |   cache_dir = /mmfs1/home/alexchin/.cache/stable-pretraining
+22:36:34 | INFO  | manager.py  |   ddp: launch_key=slurm-35104694 rank=0 is_rank_zero=True
+22:36:34 | INFO  | utils.py    | ── RunDirectory: requeue probe ───────────────────
+22:36:34 | INFO  | manager.py  |   SLURM session key   = 35104694
+22:36:34 | INFO  | manager.py  |   SLURM_RESTART_COUNT = 1
+22:36:34 | INFO  | manager.py  |   in_requeue          = True
+22:36:34 | INFO  | manager.py  |   → looking up index file: /mmfs1/home/alexchin/.cache/stable-pretraining/.slurm_index/35104694
+22:36:34 | INFO  | utils.py    | ── RunDirectory (REQUEUE — restored from index) ──
+22:36:34 | INFO  | manager.py  |   run_dir = /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260507/200713/bc5dcf440da0
+22:36:34 | INFO  | manager.py  |   run_id  = bc5dcf440da0
+22:36:34 | INFO  | manager.py  |   rank-0 published handoff → /mmfs1/home/alexchin/.cache/stable-pretraining/.rank_handoff/slurm-35104694
+22:36:34 | WARN  | manager.py  | ! cache_dir is set but the Trainer was passed as an already-instantiated object. Cannot override default_root_dir cleanly. Consider passing the trainer as a config dict instead.
+22:36:34 | WARN  | manager.py  | ! Hydra run.dir='outputs/2026-05-07/22-34-56' will be ignored for trainer outputs (cache_dir takes precedence).
+22:36:34 | WARN  | manager.py  | ! Hydra sweep.dir='multirun/2026-05-07/22-34-56' will be ignored for trainer outputs (cache_dir takes precedence).
+22:36:34 | INFO  | logger.py   | [RegistryLogger] run_id=bc5dcf440da0 run_dir=/mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260507/200713/bc5dcf440da0 — sidecar.json + summary.json + metrics.csv will live here
+22:36:34 | INFO  | utils.py    | ── RegistryLogger ────────────────────────────────
+22:36:34 | INFO  | manager.py  |   run_dir: /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260507/200713/bc5dcf440da0
+22:36:34 | INFO  | manager.py  |   run_id:  bc5dcf440da0
+22:36:34 | INFO  | utils.py    | ── Wandb ─────────────────────────────────────────
+22:36:34 | INFO  | manager.py  |   a Wandb config is provided, not uploading Hydra's:
+22:36:34 | INFO  | utils.py    | ── CSVLogger ─────────────────────────────────────
+22:36:34 | INFO  | manager.py  |   root_dir: /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260507/200713/bc5dcf440da0/
+22:36:34 | INFO  | manager.py  |   save_dir: /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260507/200713/bc5dcf440da0
+22:36:34 | INFO  | manager.py  |   log_dir: /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260507/200713/bc5dcf440da0/
+22:36:34 | INFO  | utils.py    | ── SignalHandlers ────────────────────────────────
+22:36:34 | INFO  | manager.py  |   SIGUSR1: `0`
+22:36:34 | INFO  | manager.py  |   SIGUSR2: `0`
+22:36:34 | INFO  | manager.py  |   SIGCONT: `0`
+22:36:34 | INFO  | manager.py  |   SIGTERM: `0`
+22:36:34 | INFO  | utils.py    | ── Callbacks ─────────────────────────────────────
+22:36:34 | INFO  | manager.py  |   count: 18
+22:36:34 | INFO  | utils.py    | ── CacheDirCheckpointing ─────────────────────────
+22:36:34 | INFO  | manager.py  |   Saving checkpoints to: /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260507/200713/bc5dcf440da0/checkpoints
+22:36:34 | WARN  | manager.py  |   Redirecting HuggingFaceCheckpointCallback from 'hf_exports' to '/mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260507/200713/bc5dcf440da0/hf_exports' (cache_dir is active — prevents races on a shared cache)
+22:36:34 | INFO  | manager.py  |   Added requeue checkpoint (filename='last')
+22:36:34 | INFO  | utils.py    | ── LoadPath resolution ───────────────────────────
+22:36:34 | INFO  | manager.py  |   in_requeue = True
+22:36:34 | INFO  | manager.py  |   user ckpt_path = None
+22:36:34 | INFO  | manager.py  |   user weights_only = True
+Error executing job with overrides: ['data=pusht', 'num_workers=12', 'loader.batch_size=256', 'loader.prefetch_factor=4']
+Traceback (most recent call last):
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/train.py", line 179, in run
+    manager()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/manager.py", line 1464, in __call__
+    ckpt_path, weights_only_for_load = self._resolve_load_path(run_dir)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/manager.py", line 1059, in _resolve_load_path
+    raise RuntimeError(
+RuntimeError: REQUEUE but no last.ckpt to resume from at /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260507/200713/bc5dcf440da0/checkpoints/last.ckpt. The original run was preempted before saving its first checkpoint, OR the requeue-checkpoint callback was disabled (spt.set(requeue_checkpoint=False)). Either way there is no in-flight state to recover. Refusing to silently restart from scratch.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-05-07T17:15:18.572023",
+  "python": {
+    "version": "3.10.20 (main, Apr 14 2026, 14:28:08) [Clang 22.1.3 ]",
+    "version_info": {
+      "major": 3,
+      "minor": 10,
+      "micro": 20
+    },
+    "executable": "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/bin/python",
+    "prefix": "/mmfs1/gscratch/rao/alexchin/le-wm/.venv"
+  },
+  "system": {
+    "platform": "Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28",
+    "system": "Linux",
+    "release": "4.18.0-513.18.1.el8_9.x86_64",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "hostname": "g3013"
+  },
+  "packages": {
+    "pip_freeze": "Error getting pip freeze: Command '['/mmfs1/gscratch/rao/alexchin/le-wm/.venv/bin/python', '-m', 'pip', 'freeze']' returned non-zero exit status 1.",
+    "key_packages": {},
+    "total_packages": 0
+  },
+  "cuda": {
+    "nvidia_smi_output": "Quadro RTX 6000, 580.126.20, 24576 MiB",
+    "driver_version": "580.126.20"
+  },
+  "git": {
+    "commit_hash": "bf04d3e8c3752ac24f3692fbc5f4cf50209fa765",
+    "branch": "main",
+    "has_uncommitted_changes": true,
+    "uncommitted_changes": "M config/train/lewm.yaml\n?? __pycache__/\n?? outputs/\n?? wandb/",
+    "remote_url": "https://github.com/lucas-maes/le-wm"
+  },
+  "slurm": {
+    "SLURM_JOB_ID": "35103301",
+    "SLURM_JOB_NAME": "interactive",
+    "SLURM_JOB_PARTITION": "ckpt-all",
+    "SLURM_JOB_NODELIST": "g3013",
+    "SLURM_JOB_NUM_NODES": "1",
+    "SLURM_CPUS_PER_TASK": "6",
+    "SLURM_MEM_PER_NODE": "32768",
+    "SLURM_SUBMIT_DIR": "/mmfs1/gscratch/rao/alexchin/le-wm",
+    "SLURM_CLUSTER_NAME": "klone"
+  },
+  "environment_variables": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "PATH": "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/bin:/mmfs1/home/alexchin/miniconda3/condabin:/mmfs1/home/alexchin/.local/bin:/mmfs1/home/alexchin/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin",
+    "LD_LIBRARY_PATH": "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/cv2/../../lib64:",
+    "CUDA_DEVICE_ORDER": "PCI_BUS_ID"
+  }
+}

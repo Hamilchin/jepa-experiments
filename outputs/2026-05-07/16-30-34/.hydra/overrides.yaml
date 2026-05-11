@@ -1,0 +1,3 @@
+- data=pusht
+- wandb.config.entity=hamilchin
+- wandb.config.project=lewm-pusht

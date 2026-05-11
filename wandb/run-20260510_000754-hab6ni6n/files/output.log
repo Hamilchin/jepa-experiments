@@ -1,0 +1,1130 @@
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/connector.py:571: `precision=bf16` is supported for historical reasons but its usage is discouraged. Please set your precision to bf16-mixed instead!
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python train.py data=pusht trainer.max_epochs=10 ...
+Using bfloat16 Automatic Mixed Precision (AMP)
+00:07:57 | INFO  | env_info.py |   EnvironmentDumpCallback initialized (filename=environment.json, async=True)
+00:07:57 | INFO  | utils.py    | ── HuggingFaceCheckpoint ─────────────────────────
+00:07:57 | INFO  | hf_models.py|   save_dir: <cyan>hf_exports</cyan>
+00:07:57 | INFO  | hf_models.py|   per_step: <cyan>False</cyan>  (False ⇒ overwrite single 'last/' subdir; True ⇒ keep step_N/)
+Adding 13 callbacks from entry point 'stablepretraining_callbacks': PrintProgressBar, ModuleRegistryCallback, LoggingCallback, EnvironmentDumpCallback, TrainerInfo, SklearnCheckpoint, WandbCheckpoint, TrackioCheckpoint, SwanLabCheckpoint, ModuleSummary, SLURMInfo, LogUnusedParametersOnce, HuggingFaceCheckpointCallback
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+00:07:58 | WARN  | manager.py  | User didn't specify seed, runs won't be exactly reproducible!
+00:07:58 | INFO  | manager.py  |   Manager init: ckpt_path=None, weights_only=True
+00:07:58 | INFO  | utils.py    | ── WorkingDirectory ──────────────────────────────
+00:07:58 | INFO  | manager.py  |   cwd: /mmfs1/gscratch/rao/alexchin/le-wm
+00:07:58 | INFO  | utils.py    | ── Seed ──────────────────────────────────────────
+00:07:58 | INFO  | manager.py  |   seed: None
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/utilities/seed.py:44: No seed found, seed set to 0
+[rank: 0] Seed set to 0
+00:07:58 | INFO  | utils.py    | ── RunDirectory ──────────────────────────────────
+00:07:58 | INFO  | manager.py  |   cache_dir = /mmfs1/home/alexchin/.cache/stable-pretraining
+00:07:58 | INFO  | manager.py  |   ddp: launch_key=slurm-35132918 rank=0 is_rank_zero=True
+00:07:58 | INFO  | utils.py    | ── RunDirectory: requeue probe ───────────────────
+00:07:58 | INFO  | manager.py  |   SLURM session key   = 35132918
+00:07:58 | INFO  | manager.py  |   SLURM_RESTART_COUNT = 13
+00:07:58 | INFO  | manager.py  |   in_requeue          = True
+00:07:58 | INFO  | manager.py  |   → looking up index file: /mmfs1/home/alexchin/.cache/stable-pretraining/.slurm_index/35132918
+00:07:58 | INFO  | utils.py    | ── RunDirectory (REQUEUE — restored from index) ──
+00:07:58 | INFO  | manager.py  |   run_dir = /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd
+00:07:58 | INFO  | manager.py  |   run_id  = b6da82da55cd
+00:07:58 | INFO  | manager.py  |   rank-0 published handoff → /mmfs1/home/alexchin/.cache/stable-pretraining/.rank_handoff/slurm-35132918
+00:07:58 | WARN  | manager.py  | ! cache_dir is set but the Trainer was passed as an already-instantiated object. Cannot override default_root_dir cleanly. Consider passing the trainer as a config dict instead.
+00:07:58 | WARN  | manager.py  | ! Hydra run.dir='outputs/2026-05-10/00-07-28' will be ignored for trainer outputs (cache_dir takes precedence).
+00:07:58 | WARN  | manager.py  | ! Hydra sweep.dir='multirun/2026-05-10/00-07-28' will be ignored for trainer outputs (cache_dir takes precedence).
+00:07:58 | INFO  | logger.py   | [RegistryLogger] run_id=b6da82da55cd run_dir=/mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd — sidecar.json + summary.json + metrics.csv will live here
+00:07:58 | INFO  | utils.py    | ── RegistryLogger ────────────────────────────────
+00:07:58 | INFO  | manager.py  |   run_dir: /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd
+00:07:58 | INFO  | manager.py  |   run_id:  b6da82da55cd
+00:07:58 | INFO  | utils.py    | ── WandbResume ───────────────────────────────────
+00:07:58 | INFO  | manager.py  |   Injected wandb run ID '8vg9p8hb' from wandb_resume.json
+00:07:58 | INFO  | manager.py  |   project=lewm-default  entity=jepa-experiments
+00:07:58 | INFO  | utils.py    | ── Wandb ─────────────────────────────────────────
+00:07:58 | INFO  | manager.py  |   a Wandb config is provided, not uploading Hydra's:
+00:07:58 | INFO  | utils.py    | ── CSVLogger ─────────────────────────────────────
+00:07:58 | INFO  | manager.py  |   root_dir: /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/
+00:07:58 | INFO  | manager.py  |   save_dir: /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd
+00:07:58 | INFO  | manager.py  |   log_dir: /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/
+00:07:58 | INFO  | utils.py    | ── SignalHandlers ────────────────────────────────
+00:07:58 | INFO  | manager.py  |   SIGUSR1: `0`
+00:07:58 | INFO  | manager.py  |   SIGUSR2: `0`
+00:07:58 | INFO  | manager.py  |   SIGCONT: `0`
+00:07:58 | INFO  | manager.py  |   SIGTERM: `0`
+00:07:58 | INFO  | utils.py    | ── Callbacks ─────────────────────────────────────
+00:07:58 | INFO  | manager.py  |   count: 18
+00:07:58 | INFO  | utils.py    | ── CacheDirCheckpointing ─────────────────────────
+00:07:58 | INFO  | manager.py  |   Saving checkpoints to: /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints
+00:07:58 | WARN  | manager.py  |   Redirecting HuggingFaceCheckpointCallback from 'hf_exports' to '/mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/hf_exports' (cache_dir is active — prevents races on a shared cache)
+00:07:58 | INFO  | manager.py  |   Added requeue checkpoint (filename='last')
+00:07:58 | INFO  | utils.py    | ── LoadPath resolution ───────────────────────────
+00:07:58 | INFO  | manager.py  |   in_requeue = True
+00:07:58 | INFO  | manager.py  |   user ckpt_path = None
+00:07:58 | INFO  | manager.py  |   user weights_only = True
+00:07:58 | INFO  | manager.py  |   → loading /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/last.ckpt with weights_only=False (full state)
+00:07:58 | INFO  | utils.py    | ── TrainerFit ────────────────────────────────────
+00:07:58 | INFO  | manager.py  |   ckpt_path:     /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/last.ckpt
+00:07:58 | INFO  | manager.py  |   weights_only:  False
+💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
+You are using a CUDA device ('NVIDIA L40S') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+00:07:59 | OK    | module.py   | ✓ dataset for fit loaded
+00:07:59 | INFO  | module.py   |   setup was done by user
+00:07:59 | INFO  | utils.py    | ── EnvironmentDump ───────────────────────────────
+00:07:59 | INFO  | env_info.py |   log_dir: /mmfs1/home/alexchin/.cache/stable-pretraining
+00:07:59 | INFO  | env_info.py |   Running environment dump in background thread (non-blocking)
+00:07:59 | INFO  | env_info.py |   Collecting environment information...
+00:07:59 | OK    | env_info.py | ✓ Background thread started successfully
+00:07:59 | OK    | env_info.py | ✓ Python 3.10.20
+00:07:59 | INFO  | trainer_inf~|   linking trainer to DataModule
+00:07:59 | OK    | env_info.py | ✓ System: Linux 4.18.0-513.18.1.el8_9.x86_64 (x86_64)
+00:07:59 | INFO  | utils.py    | ── SklearnCheckpoint ─────────────────────────────
+00:07:59 | INFO  | env_info.py |   Hostname: g3102
+00:07:59 | INFO  | checkpoint_~|   Sklearn Modules:
+00:07:59 | INFO  | checkpoint_~|
+┏━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓
+┃ Module   ┃ Name   ┃ Type   ┃
+┣━━━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫
+┗━━━━━━━━━━┻━━━━━━━━┻━━━━━━━━┛
+00:07:59 | INFO  | utils.py    | ── WandbCheckpoint ───────────────────────────────
+00:07:59 | INFO  | utils.py    | ── TrackioCheckpoint ─────────────────────────────
+00:07:59 | INFO  | utils.py    | ── SwanLabCheckpoint ─────────────────────────────
+00:07:59 | INFO  | utils.py    | ── PyTorch Modules ───────────────────────────────
+00:07:59 | WARN  | module.py   | ! You are calling self.parameters which also gives callbacks parameters, to remove them, pass `with_callbacks=False`
+00:07:59 | INFO  | trainer_inf~| \n+-----------------------------------------------------------------+----------------------+--------------------------+--------------------------+---------+
+| Module                                                          | Trainable parameters | Non Trainable parameters | Uninitialized parameters | Buffers |
++-----------------------------------------------------------------+----------------------+--------------------------+--------------------------+---------+
+|                                                                 |             18034478 |                        0 |                        0 |    8245 |
+| callbacks_modules                                               |                    0 |                        0 |                        0 |       0 |
+| callbacks_metrics                                               |                    0 |                        0 |                        0 |       0 |
+| model                                                           |             18034478 |                        0 |                        0 |    8194 |
+| model.encoder                                                   |              5501376 |                        0 |                        0 |       0 |
+| model.encoder.embeddings                                        |               162624 |                        0 |                        0 |       0 |
+| model.encoder.embeddings.patch_embeddings                       |               113088 |                        0 |                        0 |       0 |
+| model.encoder.embeddings.patch_embeddings.projection            |               113088 |                        0 |                        0 |       0 |
+| model.encoder.embeddings.dropout                                |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder                                           |              5338368 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer                                     |              5338368 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10                                  |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention                        |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.attention              |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.attention.query        |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.attention.key          |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.attention.value        |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.output                 |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.output.dense           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.output.dropout         |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.intermediate                     |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.intermediate.dense               |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.intermediate.intermediate_act_fn |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.output                           |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.output.dense                     |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.output.dropout                   |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.layernorm_before                 |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.layernorm_after                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11                                  |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention                        |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.attention              |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.attention.query        |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.attention.key          |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.attention.value        |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.output                 |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.output.dense           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.output.dropout         |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.intermediate                     |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.intermediate.dense               |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.intermediate.intermediate_act_fn |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.output                           |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.output.dense                     |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.output.dropout                   |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.layernorm_before                 |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.layernorm_after                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.layernorm                                         |                  384 |                        0 |                        0 |       0 |
+| model.predictor                                                 |             10791360 |                        0 |                        0 |       0 |
+| model.predictor.dropout                                         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer                                     |             10790784 |                        0 |                        0 |       0 |
+| model.predictor.transformer.norm                                |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers                              |             10790400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.input_proj                          |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.cond_proj                           |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.output_proj                         |                    0 |                        0 |                        0 |       0 |
+| model.action_encoder                                            |               156206 |                        0 |                        0 |       0 |
+| model.action_encoder.patch_embed                                |                  110 |                        0 |                        0 |       0 |
+| model.action_encoder.embed                                      |               156096 |                        0 |                        0 |       0 |
+| model.action_encoder.embed.0                                    |                 8448 |                        0 |                        0 |       0 |
+| model.action_encoder.embed.1                                    |                    0 |                        0 |                        0 |       0 |
+| model.action_encoder.embed.2                                    |               147648 |                        0 |                        0 |       0 |
+| model.projector                                                 |               792768 |                        0 |                        0 |    4097 |
+| model.projector.net                                             |               792768 |                        0 |                        0 |    4097 |
+| model.projector.net.0                                           |               395264 |                        0 |                        0 |       0 |
+| model.projector.net.1                                           |                 4096 |                        0 |                        0 |    4097 |
+| model.projector.net.2                                           |                    0 |                        0 |                        0 |       0 |
+| model.projector.net.3                                           |               393408 |                        0 |                        0 |       0 |
+| model.pred_proj                                                 |               792768 |                        0 |                        0 |    4097 |
+| model.pred_proj.net                                             |               792768 |                        0 |                        0 |    4097 |
+| model.pred_proj.net.0                                           |               395264 |                        0 |                        0 |       0 |
+| model.pred_proj.net.1                                           |                 4096 |                        0 |                        0 |    4097 |
+| model.pred_proj.net.2                                           |                    0 |                        0 |                        0 |       0 |
+| model.pred_proj.net.3                                           |               393408 |                        0 |                        0 |       0 |
+| sigreg                                                          |                    0 |                        0 |                        0 |      51 |
++-----------------------------------------------------------------+----------------------+--------------------------+--------------------------+---------+
+00:07:59 | INFO  | utils.py    | ── SLURM ─────────────────────────────────────────
+00:07:59 | INFO  | trainer_inf~|   Job ID: 35132918
+00:07:59 | INFO  | trainer_inf~|   Task ID: N/A
+00:07:59 | INFO  | trainer_inf~|   Job Name: lewm-pusht-paper
+00:07:59 | INFO  | trainer_inf~|   Nodes: 1
+00:07:59 | INFO  | trainer_inf~|   Tasks: N/A
+00:07:59 | INFO  | trainer_inf~|   CPUs per node: 8
+00:07:59 | INFO  | trainer_inf~|   CPUs per task: 8
+00:07:59 | INFO  | trainer_inf~|   Memory per node: 65536
+00:07:59 | INFO  | trainer_inf~|   Memory per CPU: N/A
+00:07:59 | INFO  | trainer_inf~|   Time limit: N/A
+00:07:59 | INFO  | trainer_inf~|   Partition: ckpt-all
+00:07:59 | INFO  | trainer_inf~|   Node List: g3102
+00:07:59 | INFO  | trainer_inf~|   Submit Directory: /mmfs1/gscratch/rao/alexchin/le-wm
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py:881: Checkpoint directory /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints exists and is not empty.
+Restoring states from the checkpoint path at /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/last.ckpt
+00:07:59 | WARN  | env_info.py | ! pip freeze failed: Command '['/mmfs1/gscratch/rao/alexchin/le-wm/.venv/bin/python', '-m', 'pip', 'freeze']' returned non-zero exit status 1.
+00:07:59 | OK    | env_info.py | ✓ Packages: 0 packages collected in 0.20s
+00:07:59 | OK    | env_info.py | ✓ NVIDIA Driver: 580.126.20
+00:07:59 | INFO  | checkpoint_~|   Checking for non PyTorch modules to load
+00:07:59 | INFO  | checkpoint_~|   Wandb run ID '8vg9p8hb' matches — resume is set up correctly.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+00:07:59 | OK    | env_info.py | ✓ Git: main @ bf04d3e8
+00:07:59 | INFO  | env_info.py |   Remote: https://github.com/lucas-maes/le-wm
+00:07:59 | WARN  | env_info.py | ! Working directory has uncommitted changes
+00:07:59 | OK    | env_info.py | ✓ SLURM Job: 35132918
+00:07:59 | INFO  | env_info.py |   Name: lewm-pusht-paper
+00:07:59 | INFO  | env_info.py |   Partition: ckpt-all
+00:07:59 | INFO  | env_info.py |   Nodes: 1
+00:07:59 | INFO  | env_info.py |   Tasks: N/A
+00:07:59 | OK    | env_info.py | ✓ Environment: 4 relevant variables captured
+00:07:59 | INFO  | env_info.py |   Serializing environment data...
+00:07:59 | INFO  | env_info.py |   File exists, using version 23: environment_v23.json
+00:07:59 | INFO  | env_info.py |   File exists, using version 23: requirements_frozen_v23.txt
+00:07:59 | INFO  | env_info.py |   Save directory: /mmfs1/home/alexchin/.cache/stable-pretraining
+00:07:59 | INFO  | env_info.py |   Writing environment to temp file...
+00:07:59 | INFO  | env_info.py |   Moving to: environment_v23.json
+00:07:59 | OK    | env_info.py | ✓ Environment file saved (2.6 KB)
+00:07:59 | OK    | env_info.py | ✓ Requirements file saved (0.1 KB)
+00:07:59 | INFO  | utils.py    | ── Optimizers ────────────────────────────────────
+00:07:59 | INFO  | module.py   |   Optimizer specified by Dict with keys ['model_opt']
+00:07:59 | INFO  | module.py   |
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Optimizer   ┃ Pattern   ┃   Matched Modules ┃   Param Tensors ┃   Total Params ┃   RequiresGrad Tensors ┃
+┣━━━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃ model_opt   ┃ model     ┃               365 ┃             297 ┃       18034478 ┃                    297 ┃
+┗━━━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━┛
+00:07:59 | INFO  | lr_schedule~| 	User provided a dict
+Loading `train_dataloader` to estimate number of stepping batches.
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lance/__init__.py:293: UserWarning: lance is not fork-safe. If you are using multiprocessing, use spawn or forkserver instead.
+  warnings.warn(
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lancedb/__init__.py:294: UserWarning: lance is not fork-safe. If you are using multiprocessing, use spawn instead.
+  warnings.warn(
+00:08:00 | INFO  | module.py   |   Configured optimizer 'model_opt' (modules=365, param_tensors=297, total_params=18034478) with LinearWarmupCosineAnnealingLR scheduler.
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:242: Precision bf16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+┏━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name              ┃ Type       ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ callbacks_modules │ ModuleDict │      0 │ train │     0 │
+│ 1 │ callbacks_metrics │ ModuleDict │      0 │ train │     0 │
+│ 2 │ model             │ JEPA       │ 18.0 M │ train │     0 │
+│ 3 │ sigreg            │ SIGReg     │      0 │ train │     0 │
+└───┴───────────────────┴────────────┴────────┴───────┴───────┘
+Trainable params: 18.0 M
+Non-trainable params: 0
+Total params: 18.0 M
+Total estimated model params size (MB): 72
+Modules in train mode: 368
+Modules in eval mode: 0
+Total FLOPs: 0
+00:08:00 | INFO  | logger.py   | [RegistryLogger] summary.json flushed (0 metrics, step=0, epoch=0) → /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/summary.json
+Restored all states from the checkpoint at /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/last.ckpt
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 128. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+00:08:15 | INFO  | trainer_inf~| \n+----------------------------+---------------------+
+|           Metric           |        Value        |
++----------------------------+---------------------+
+|       [0;34;40mvalidate/loss[0m        | [0;32;40m0.13518187403678894[0m |
+|    [0;34;40mvalidate/loss_epoch[0m     | [0;32;40m0.13518187403678894[0m |
+|     [0;34;40mvalidate/pred_loss[0m     | [0;32;40m0.00627562589943409[0m |
+|  [0;34;40mvalidate/pred_loss_epoch[0m  | [0;32;40m0.00627562589943409[0m |
+|    [0;34;40mvalidate/sigreg_loss[0m    |        [0;32;40m1.4375[0m       |
+| [0;34;40mvalidate/sigreg_loss_epoch[0m |        [0;32;40m1.4375[0m       |
++----------------------------+---------------------+
+00:08:15 | WARN  | hf_models.py| ! No Hugging Face (PreTrainedModel) submodules found in LightningModule.
+00:08:15 | INFO  | utils.py    | ── Optimizers ────────────────────────────────────
+00:08:15 | INFO  | module.py   |   self.optimizers() gave us 1 optimizers
+00:08:15 | WARN  | module.py   | ! No clip val found for optimizer default_0
+00:08:15 | WARN  | module.py   | ! Will use the Trainer's value of 1.0
+00:08:15 | WARN  | module.py   | ! No clip algorithm found for optimizer default_0
+00:08:15 | WARN  | module.py   | ! Will use the Trainer's value of None
+00:08:15 | OK    | module.py   | ✓ Optimizer check complete:
++------------+-----------+----------------+-----------+-----------+
+| Opt. Index | Opt. name |      opt       | clip val. | clip alg. |
++------------+-----------+----------------+-----------+-----------+
+|     0      | default_0 | LightningAdamW |    1.0    |    None   |
++------------+-----------+----------------+-----------+-----------+
+00:08:16 | OK    | unused_para~| ✓ all tracked parameters received gradients on the first backward pass
+00:08:16 | INFO  | unused_para~|   hooks removed, callback disabled
+[Epoch 4/10] step 50/13933 (4.2 it/s)
+[Epoch 4/10] step 100/13933 (4.4 it/s)
+[Epoch 4/10] step 150/13933 (4.4 it/s)
+[Epoch 4/10] step 200/13933 (4.3 it/s)
+[Epoch 4/10] step 250/13933 (4.3 it/s)
+[Epoch 4/10] step 300/13933 (4.3 it/s)
+[Epoch 4/10] step 350/13933 (4.3 it/s)
+[Epoch 4/10] step 400/13933 (4.3 it/s)
+[Epoch 4/10] step 450/13933 (4.3 it/s)
+[Epoch 4/10] step 500/13933 (4.3 it/s)
+[Epoch 4/10] step 550/13933 (4.3 it/s)
+[Epoch 4/10] step 600/13933 (4.3 it/s)
+[Epoch 4/10] step 650/13933 (4.3 it/s)
+[Epoch 4/10] step 700/13933 (4.3 it/s)
+[Epoch 4/10] step 750/13933 (4.3 it/s)
+[Epoch 4/10] step 800/13933 (4.3 it/s)
+[Epoch 4/10] step 850/13933 (4.3 it/s)
+[Epoch 4/10] step 900/13933 (4.3 it/s)
+[Epoch 4/10] step 950/13933 (4.3 it/s)
+[Epoch 4/10] step 1000/13933 (4.3 it/s)
+[Epoch 4/10] step 1050/13933 (4.3 it/s)
+[Epoch 4/10] step 1100/13933 (4.3 it/s)
+[Epoch 4/10] step 1150/13933 (4.3 it/s)
+[Epoch 4/10] step 1200/13933 (4.3 it/s)
+[Epoch 4/10] step 1250/13933 (4.3 it/s)
+[Epoch 4/10] step 1300/13933 (4.3 it/s)
+[Epoch 4/10] step 1350/13933 (4.3 it/s)
+[Epoch 4/10] step 1400/13933 (4.3 it/s)
+[Epoch 4/10] step 1450/13933 (4.3 it/s)
+[Epoch 4/10] step 1500/13933 (4.3 it/s)
+[Epoch 4/10] step 1550/13933 (4.3 it/s)
+[Epoch 4/10] step 1600/13933 (4.3 it/s)
+[Epoch 4/10] step 1650/13933 (4.3 it/s)
+[Epoch 4/10] step 1700/13933 (4.3 it/s)
+[Epoch 4/10] step 1750/13933 (4.3 it/s)
+[Epoch 4/10] step 1800/13933 (4.3 it/s)
+[Epoch 4/10] step 1850/13933 (4.3 it/s)
+[Epoch 4/10] step 1900/13933 (4.3 it/s)
+[Epoch 4/10] step 1950/13933 (4.3 it/s)
+[Epoch 4/10] step 2000/13933 (4.3 it/s)
+[Epoch 4/10] step 2050/13933 (4.3 it/s)
+[Epoch 4/10] step 2100/13933 (4.3 it/s)
+[Epoch 4/10] step 2150/13933 (4.3 it/s)
+[Epoch 4/10] step 2200/13933 (4.3 it/s)
+[Epoch 4/10] step 2250/13933 (4.3 it/s)
+[Epoch 4/10] step 2300/13933 (4.3 it/s)
+[Epoch 4/10] step 2350/13933 (4.3 it/s)
+[Epoch 4/10] step 2400/13933 (4.3 it/s)
+[Epoch 4/10] step 2450/13933 (4.3 it/s)
+[Epoch 4/10] step 2500/13933 (4.3 it/s)
+[Epoch 4/10] step 2550/13933 (4.3 it/s)
+[Epoch 4/10] step 2600/13933 (4.3 it/s)
+[Epoch 4/10] step 2650/13933 (4.3 it/s)
+[Epoch 4/10] step 2700/13933 (4.3 it/s)
+[Epoch 4/10] step 2750/13933 (4.3 it/s)
+[Epoch 4/10] step 2800/13933 (4.3 it/s)
+[Epoch 4/10] step 2850/13933 (4.3 it/s)
+[Epoch 4/10] step 2900/13933 (4.3 it/s)
+[Epoch 4/10] step 2950/13933 (4.3 it/s)
+[Epoch 4/10] step 3000/13933 (4.3 it/s)
+[Epoch 4/10] step 3050/13933 (4.3 it/s)
+[Epoch 4/10] step 3100/13933 (4.3 it/s)
+[Epoch 4/10] step 3150/13933 (4.3 it/s)
+[Epoch 4/10] step 3200/13933 (4.3 it/s)
+[Epoch 4/10] step 3250/13933 (4.3 it/s)
+[Epoch 4/10] step 3300/13933 (4.3 it/s)
+[Epoch 4/10] step 3350/13933 (4.3 it/s)
+[Epoch 4/10] step 3400/13933 (4.3 it/s)
+[Epoch 4/10] step 3450/13933 (4.3 it/s)
+[Epoch 4/10] step 3500/13933 (4.3 it/s)
+[Epoch 4/10] step 3550/13933 (4.3 it/s)
+[Epoch 4/10] step 3600/13933 (4.3 it/s)
+[Epoch 4/10] step 3650/13933 (4.3 it/s)
+[Epoch 4/10] step 3700/13933 (4.3 it/s)
+[Epoch 4/10] step 3750/13933 (4.3 it/s)
+[Epoch 4/10] step 3800/13933 (4.3 it/s)
+[Epoch 4/10] step 3850/13933 (4.3 it/s)
+[Epoch 4/10] step 3900/13933 (4.3 it/s)
+[Epoch 4/10] step 3950/13933 (4.3 it/s)
+[Epoch 4/10] step 4000/13933 (4.3 it/s)
+[Epoch 4/10] step 4050/13933 (4.3 it/s)
+[Epoch 4/10] step 4100/13933 (4.3 it/s)
+[Epoch 4/10] step 4150/13933 (4.3 it/s)
+[Epoch 4/10] step 4200/13933 (4.3 it/s)
+[Epoch 4/10] step 4250/13933 (4.3 it/s)
+[Epoch 4/10] step 4300/13933 (4.3 it/s)
+[Epoch 4/10] step 4350/13933 (4.3 it/s)
+[Epoch 4/10] step 4400/13933 (4.3 it/s)
+[Epoch 4/10] step 4450/13933 (4.3 it/s)
+[Epoch 4/10] step 4500/13933 (4.3 it/s)
+[Epoch 4/10] step 4550/13933 (4.3 it/s)
+[Epoch 4/10] step 4600/13933 (4.3 it/s)
+[Epoch 4/10] step 4650/13933 (4.3 it/s)
+[Epoch 4/10] step 4700/13933 (4.3 it/s)
+[Epoch 4/10] step 4750/13933 (4.3 it/s)
+[Epoch 4/10] step 4800/13933 (4.3 it/s)
+[Epoch 4/10] step 4850/13933 (4.3 it/s)
+[Epoch 4/10] step 4900/13933 (4.3 it/s)
+[Epoch 4/10] step 4950/13933 (4.3 it/s)
+[Epoch 4/10] step 5000/13933 (4.3 it/s)
+[Epoch 4/10] step 5050/13933 (4.3 it/s)
+[Epoch 4/10] step 5100/13933 (4.3 it/s)
+[Epoch 4/10] step 5150/13933 (4.3 it/s)
+[Epoch 4/10] step 5200/13933 (4.3 it/s)
+[Epoch 4/10] step 5250/13933 (4.3 it/s)
+[Epoch 4/10] step 5300/13933 (4.3 it/s)
+[Epoch 4/10] step 5350/13933 (4.3 it/s)
+[Epoch 4/10] step 5400/13933 (4.3 it/s)
+[Epoch 4/10] step 5450/13933 (4.3 it/s)
+[Epoch 4/10] step 5500/13933 (4.3 it/s)
+[Epoch 4/10] step 5550/13933 (4.3 it/s)
+[Epoch 4/10] step 5600/13933 (4.3 it/s)
+[Epoch 4/10] step 5650/13933 (4.3 it/s)
+[Epoch 4/10] step 5700/13933 (4.3 it/s)
+[Epoch 4/10] step 5750/13933 (4.3 it/s)
+[Epoch 4/10] step 5800/13933 (4.3 it/s)
+[Epoch 4/10] step 5850/13933 (4.3 it/s)
+[Epoch 4/10] step 5900/13933 (4.3 it/s)
+[Epoch 4/10] step 5950/13933 (4.3 it/s)
+[Epoch 4/10] step 6000/13933 (4.3 it/s)
+[Epoch 4/10] step 6050/13933 (4.3 it/s)
+[Epoch 4/10] step 6100/13933 (4.3 it/s)
+[Epoch 4/10] step 6150/13933 (4.3 it/s)
+[Epoch 4/10] step 6200/13933 (4.3 it/s)
+[Epoch 4/10] step 6250/13933 (4.3 it/s)
+[Epoch 4/10] step 6300/13933 (4.3 it/s)
+[Epoch 4/10] step 6350/13933 (4.3 it/s)
+[Epoch 4/10] step 6400/13933 (4.3 it/s)
+[Epoch 4/10] step 6450/13933 (4.3 it/s)
+[Epoch 4/10] step 6500/13933 (4.3 it/s)
+[Epoch 4/10] step 6550/13933 (4.3 it/s)
+[Epoch 4/10] step 6600/13933 (4.3 it/s)
+[Epoch 4/10] step 6650/13933 (4.3 it/s)
+[Epoch 4/10] step 6700/13933 (4.3 it/s)
+[Epoch 4/10] step 6750/13933 (4.3 it/s)
+[Epoch 4/10] step 6800/13933 (4.3 it/s)
+[Epoch 4/10] step 6850/13933 (4.3 it/s)
+[Epoch 4/10] step 6900/13933 (4.3 it/s)
+[Epoch 4/10] step 6950/13933 (4.3 it/s)
+[Epoch 4/10] step 7000/13933 (4.3 it/s)
+[Epoch 4/10] step 7050/13933 (4.3 it/s)
+[Epoch 4/10] step 7100/13933 (4.3 it/s)
+[Epoch 4/10] step 7150/13933 (4.3 it/s)
+[Epoch 4/10] step 7200/13933 (4.3 it/s)
+[Epoch 4/10] step 7250/13933 (4.3 it/s)
+[Epoch 4/10] step 7300/13933 (4.3 it/s)
+[Epoch 4/10] step 7350/13933 (4.3 it/s)
+[Epoch 4/10] step 7400/13933 (4.3 it/s)
+[Epoch 4/10] step 7450/13933 (4.3 it/s)
+[Epoch 4/10] step 7500/13933 (4.3 it/s)
+[Epoch 4/10] step 7550/13933 (4.3 it/s)
+[Epoch 4/10] step 7600/13933 (4.3 it/s)
+[Epoch 4/10] step 7650/13933 (4.3 it/s)
+[Epoch 4/10] step 7700/13933 (4.3 it/s)
+[Epoch 4/10] step 7750/13933 (4.3 it/s)
+[Epoch 4/10] step 7800/13933 (4.3 it/s)
+[Epoch 4/10] step 7850/13933 (4.3 it/s)
+[Epoch 4/10] step 7900/13933 (4.3 it/s)
+[Epoch 4/10] step 7950/13933 (4.3 it/s)
+[Epoch 4/10] step 8000/13933 (4.3 it/s)
+[Epoch 4/10] step 8050/13933 (4.3 it/s)
+[Epoch 4/10] step 8100/13933 (4.3 it/s)
+[Epoch 4/10] step 8150/13933 (4.3 it/s)
+[Epoch 4/10] step 8200/13933 (4.3 it/s)
+[Epoch 4/10] step 8250/13933 (4.3 it/s)
+[Epoch 4/10] step 8300/13933 (4.3 it/s)
+[Epoch 4/10] step 8350/13933 (4.3 it/s)
+[Epoch 4/10] step 8400/13933 (4.3 it/s)
+[Epoch 4/10] step 8450/13933 (4.3 it/s)
+[Epoch 4/10] step 8500/13933 (4.3 it/s)
+[Epoch 4/10] step 8550/13933 (4.3 it/s)
+[Epoch 4/10] step 8600/13933 (4.3 it/s)
+[Epoch 4/10] step 8650/13933 (4.3 it/s)
+[Epoch 4/10] step 8700/13933 (4.3 it/s)
+[Epoch 4/10] step 8750/13933 (4.3 it/s)
+[Epoch 4/10] step 8800/13933 (4.3 it/s)
+[Epoch 4/10] step 8850/13933 (4.3 it/s)
+[Epoch 4/10] step 8900/13933 (4.3 it/s)
+[Epoch 4/10] step 8950/13933 (4.3 it/s)
+[Epoch 4/10] step 9000/13933 (4.3 it/s)
+[Epoch 4/10] step 9050/13933 (4.3 it/s)
+[Epoch 4/10] step 9100/13933 (4.3 it/s)
+[Epoch 4/10] step 9150/13933 (4.3 it/s)
+[Epoch 4/10] step 9200/13933 (4.3 it/s)
+[Epoch 4/10] step 9250/13933 (4.3 it/s)
+[Epoch 4/10] step 9300/13933 (4.3 it/s)
+[Epoch 4/10] step 9350/13933 (4.3 it/s)
+[Epoch 4/10] step 9400/13933 (4.3 it/s)
+[Epoch 4/10] step 9450/13933 (4.3 it/s)
+[Epoch 4/10] step 9500/13933 (4.3 it/s)
+[Epoch 4/10] step 9550/13933 (4.3 it/s)
+[Epoch 4/10] step 9600/13933 (4.3 it/s)
+[Epoch 4/10] step 9650/13933 (4.3 it/s)
+[Epoch 4/10] step 9700/13933 (4.3 it/s)
+[Epoch 4/10] step 9750/13933 (4.3 it/s)
+[Epoch 4/10] step 9800/13933 (4.3 it/s)
+[Epoch 4/10] step 9850/13933 (4.3 it/s)
+[Epoch 4/10] step 9900/13933 (4.3 it/s)
+[Epoch 4/10] step 9950/13933 (4.3 it/s)
+[Epoch 4/10] step 10000/13933 (4.3 it/s)
+[Epoch 4/10] step 10050/13933 (4.3 it/s)
+[Epoch 4/10] step 10100/13933 (4.3 it/s)
+[Epoch 4/10] step 10150/13933 (4.3 it/s)
+[Epoch 4/10] step 10200/13933 (4.3 it/s)
+[Epoch 4/10] step 10250/13933 (4.3 it/s)
+[Epoch 4/10] step 10300/13933 (4.3 it/s)
+[Epoch 4/10] step 10350/13933 (4.3 it/s)
+[Epoch 4/10] step 10400/13933 (4.3 it/s)
+[Epoch 4/10] step 10450/13933 (4.3 it/s)
+[Epoch 4/10] step 10500/13933 (4.3 it/s)
+[Epoch 4/10] step 10550/13933 (4.3 it/s)
+[Epoch 4/10] step 10600/13933 (4.3 it/s)
+[Epoch 4/10] step 10650/13933 (4.3 it/s)
+[Epoch 4/10] step 10700/13933 (4.3 it/s)
+[Epoch 4/10] step 10750/13933 (4.3 it/s)
+[Epoch 4/10] step 10800/13933 (4.3 it/s)
+[Epoch 4/10] step 10850/13933 (4.3 it/s)
+[Epoch 4/10] step 10900/13933 (4.3 it/s)
+[Epoch 4/10] step 10950/13933 (4.3 it/s)
+[Epoch 4/10] step 11000/13933 (4.3 it/s)
+[Epoch 4/10] step 11050/13933 (4.3 it/s)
+[Epoch 4/10] step 11100/13933 (4.3 it/s)
+[Epoch 4/10] step 11150/13933 (4.3 it/s)
+[Epoch 4/10] step 11200/13933 (4.3 it/s)
+[Epoch 4/10] step 11250/13933 (4.3 it/s)
+[Epoch 4/10] step 11300/13933 (4.3 it/s)
+[Epoch 4/10] step 11350/13933 (4.3 it/s)
+[Epoch 4/10] step 11400/13933 (4.3 it/s)
+[Epoch 4/10] step 11450/13933 (4.3 it/s)
+[Epoch 4/10] step 11500/13933 (4.3 it/s)
+[Epoch 4/10] step 11550/13933 (4.3 it/s)
+[Epoch 4/10] step 11600/13933 (4.3 it/s)
+[Epoch 4/10] step 11650/13933 (4.3 it/s)
+[Epoch 4/10] step 11700/13933 (4.3 it/s)
+[Epoch 4/10] step 11750/13933 (4.3 it/s)
+[Epoch 4/10] step 11800/13933 (4.3 it/s)
+[Epoch 4/10] step 11850/13933 (4.3 it/s)
+[Epoch 4/10] step 11900/13933 (4.3 it/s)
+[Epoch 4/10] step 11950/13933 (4.3 it/s)
+[Epoch 4/10] step 12000/13933 (4.3 it/s)
+[Epoch 4/10] step 12050/13933 (4.3 it/s)
+[Epoch 4/10] step 12100/13933 (4.3 it/s)
+[Epoch 4/10] step 12150/13933 (4.3 it/s)
+[Epoch 4/10] step 12200/13933 (4.3 it/s)
+[Epoch 4/10] step 12250/13933 (4.3 it/s)
+[Epoch 4/10] step 12300/13933 (4.3 it/s)
+[Epoch 4/10] step 12350/13933 (4.3 it/s)
+[Epoch 4/10] step 12400/13933 (4.3 it/s)
+[Epoch 4/10] step 12450/13933 (4.3 it/s)
+[Epoch 4/10] step 12500/13933 (4.3 it/s)
+[Epoch 4/10] step 12550/13933 (4.3 it/s)
+[Epoch 4/10] step 12600/13933 (4.3 it/s)
+[Epoch 4/10] step 12650/13933 (4.3 it/s)
+[Epoch 4/10] step 12700/13933 (4.3 it/s)
+[Epoch 4/10] step 12750/13933 (4.3 it/s)
+[Epoch 4/10] step 12800/13933 (4.3 it/s)
+[Epoch 4/10] step 12850/13933 (4.3 it/s)
+[Epoch 4/10] step 12900/13933 (4.3 it/s)
+[Epoch 4/10] step 12950/13933 (4.3 it/s)
+[Epoch 4/10] step 13000/13933 (4.3 it/s)
+[Epoch 4/10] step 13050/13933 (4.3 it/s)
+[Epoch 4/10] step 13100/13933 (4.3 it/s)
+[Epoch 4/10] step 13150/13933 (4.3 it/s)
+[Epoch 4/10] step 13200/13933 (4.3 it/s)
+[Epoch 4/10] step 13250/13933 (4.3 it/s)
+[Epoch 4/10] step 13300/13933 (4.3 it/s)
+[Epoch 4/10] step 13350/13933 (4.3 it/s)
+[Epoch 4/10] step 13400/13933 (4.3 it/s)
+[Epoch 4/10] step 13450/13933 (4.3 it/s)
+[Epoch 4/10] step 13500/13933 (4.3 it/s)
+[Epoch 4/10] step 13550/13933 (4.3 it/s)
+[Epoch 4/10] step 13600/13933 (4.3 it/s)
+[Epoch 4/10] step 13650/13933 (4.3 it/s)
+[Epoch 4/10] step 13700/13933 (4.3 it/s)
+[Epoch 4/10] step 13750/13933 (4.3 it/s)
+[Epoch 4/10] step 13800/13933 (4.3 it/s)
+[Epoch 4/10] step 13850/13933 (4.3 it/s)
+[Epoch 4/10] step 13900/13933 (4.3 it/s)
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 28. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+01:07:14 | INFO  | trainer_inf~| \n+----------------------------+------------------------+
+|           Metric           |         Value          |
++----------------------------+------------------------+
+|          [0;34;40mfit/loss[0m          |  [0;32;40m0.09081347286701202[0m   |
+|       [0;34;40mfit/pred_loss[0m        |  [0;32;40m0.009758783504366875[0m  |
+|      [0;34;40mfit/sigreg_loss[0m       |       [0;32;40m0.90234375[0m       |
+|    [0;34;40mhparams/lr_default_0[0m    | [0;32;40m2.5396562705282122e-05[0m |
+|       [0;34;40mvalidate/loss[0m        |   [0;32;40m0.129477858543396[0m    |
+|    [0;34;40mvalidate/loss_epoch[0m     |   [0;32;40m0.129477858543396[0m    |
+|     [0;34;40mvalidate/pred_loss[0m     |  [0;32;40m0.006083498243242502[0m  |
+|  [0;34;40mvalidate/pred_loss_epoch[0m  |  [0;32;40m0.006083498243242502[0m  |
+|    [0;34;40mvalidate/sigreg_loss[0m    |   [0;32;40m1.3711066246032715[0m   |
+| [0;34;40mvalidate/sigreg_loss_epoch[0m |   [0;32;40m1.3711066246032715[0m   |
++----------------------------+------------------------+
+[Epoch 4/10] done in 3539.4s
+01:07:14 | INFO  | checkpoint_~|   Checking for non PyTorch modules to save
+01:07:14 | INFO  | checkpoint_~|   Saved wandb resume info to checkpoint: {'id': 'hab6ni6n', 'project': 'lewm-default', 'entity': 'jepa-experiments'}
+01:07:14 | INFO  | checkpoint_~|   Wrote /mmfs1/gscratch/rao/alexchin/le-wm/wandb_resume.json
+01:07:14 | INFO  | atomic_chec~| [atomic_save] → /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/epoch=4-step=69665.ckpt
+01:07:15 | ERROR | atomic_chec~| [atomic_save] ✗ epoch=4-step=69665.ckpt FAILED (OSError: [Errno 122] Disk quota exceeded) — removing temp /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/.epoch=4-step=69665.ckpt.df9q3xlw.tmp; previous checkpoint at /mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/epoch=4-step=69665.ckpt is intact
+Epoch 4/9  ━━━━━━━━━━━━━━━━━━ 13933/13933 0:54:28 • 0:00:00 4.34it/s v_num: ni6n
+
+!!! TRAINER FIT FAILED — OSError: [Errno 122] Disk quota exceeded
+    epoch=4/10, global_step=69665
+
+Traceback (most recent call last):
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/manager.py", line 1514, in __call__
+    self._trainer.fit(
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1079, in _run
+    results = self._run_stage()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1123, in _run_stage
+    self.fit_loop.run()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 218, in run
+    self.on_advance_end()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 480, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 228, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 493, in on_train_epoch_end
+    self._save_topk_checkpoint(trainer, monitor_candidates)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 591, in _save_topk_checkpoint
+    self._save_none_monitor_checkpoint(trainer, monitor_candidates)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 942, in _save_none_monitor_checkpoint
+    self._save_checkpoint(trainer, filepath)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 600, in _save_checkpoint
+    trainer.save_checkpoint(filepath, self.save_weights_only)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1464, in save_checkpoint
+    self.strategy.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/strategies/strategy.py", line 491, in save_checkpoint
+    self.checkpoint_io.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/utils/atomic_checkpoint.py", line 144, in _atomic_save_checkpoint
+    atomic_torch_save(checkpoint, path)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/utils/atomic_checkpoint.py", line 98, in atomic_torch_save
+    f.write(buf.getvalue())
+OSError: [Errno 122] Disk quota exceeded
+
+!!! TRAINER FIT FAILED — OSError: [Errno 122] Disk quota exceeded
+    epoch=4/10, global_step=69665
+Traceback (most recent call last):
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/manager.py", line 1514, in __call__
+    self._trainer.fit(
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1079, in _run
+    results = self._run_stage()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1123, in _run_stage
+    self.fit_loop.run()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 218, in run
+    self.on_advance_end()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 480, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 228, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 493, in on_train_epoch_end
+    self._save_topk_checkpoint(trainer, monitor_candidates)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 591, in _save_topk_checkpoint
+    self._save_none_monitor_checkpoint(trainer, monitor_candidates)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 942, in _save_none_monitor_checkpoint
+    self._save_checkpoint(trainer, filepath)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 600, in _save_checkpoint
+    trainer.save_checkpoint(filepath, self.save_weights_only)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1464, in save_checkpoint
+    self.strategy.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/strategies/strategy.py", line 491, in save_checkpoint
+    self.checkpoint_io.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/utils/atomic_checkpoint.py", line 144, in _atomic_save_checkpoint
+    atomic_torch_save(checkpoint, path)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/utils/atomic_checkpoint.py", line 98, in atomic_torch_save
+    f.write(buf.getvalue())
+OSError: [Errno 122] Disk quota exceeded
+
+01:07:15 | ERROR | manager.py  | Trainer.fit raised — re-raising after loud log
+Traceback (most recent call last):
+
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/train.py", line 184, in <module>
+    run()
+    └ <function run at 0x152a2a686b90>
+
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+    └ <function _run_hydra at 0x152b8809c790>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+    └ <function _run_app at 0x152b8809c820>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+    └ <function run_and_report at 0x152b8809c700>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+           └ <function _run_app.<locals>.<lambda> at 0x152a2a6b3760>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+            │     └ <function Hydra.run at 0x152b87f96e60>
+            └ <hydra._internal.hydra.Hydra object at 0x152a2a4c84f0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+          └ <function run_job at 0x152b88043880>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+    │   │              │             └ {'output_model_name': 'lewm', 'subdir': '${hydra:job.id}', 'num_workers': 6, 'train_split': 0.9, 'seed': 3072, 'img_size': 22...
+    │   │              └ <function run at 0x152a2a686b00>
+    │   └ <property object at 0x152b8803ba60>
+    └ JobReturn(overrides=['data=pusht', 'trainer.max_epochs=10'], cfg={'output_model_name': 'lewm', 'subdir': '${hydra:job.id}', '...
+
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/train.py", line 179, in run
+    manager()
+    └ <stable_pretraining.manager.Manager object at 0x152a0acec7c0>
+
+> File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/manager.py", line 1514, in __call__
+    self._trainer.fit(
+    │    │        └ <function Trainer.fit at 0x152a893dbac0>
+    │    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+    └ <stable_pretraining.manager.Manager object at 0x152a0acec7c0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+    │    └ <function _call_and_handle_interrupt at 0x152a894d9870>
+    └ <module 'lightning.pytorch.trainer.call' from '/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightnin...
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           │           │       └ {}
+           │           └ (Module(
+           │               (callbacks_modules): ModuleDict()
+           │               (callbacks_metrics): ModuleDict()
+           │               (model): JEPA(
+           │                 (encoder): ViTModel(
+           │               ...
+           └ <bound method Trainer._fit_impl of <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+    │    │    │                │                       └ False
+    │    │    │                └ '/mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/last.ckpt'
+    │    │    └ Module(
+    │    │        (callbacks_modules): ModuleDict()
+    │    │        (callbacks_metrics): ModuleDict()
+    │    │        (model): JEPA(
+    │    │          (encoder): ViTModel(
+    │    │         ...
+    │    └ <function Trainer._run at 0x152a893dbf40>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1079, in _run
+    results = self._run_stage()
+              │    └ <function Trainer._run_stage at 0x152a893fc0d0>
+              └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1123, in _run_stage
+    self.fit_loop.run()
+    │    │        └ <function _FitLoop.run at 0x152a893b75b0>
+    │    └ <lightning.pytorch.loops.fit_loop._FitLoop object at 0x152a0ae8d870>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 218, in run
+    self.on_advance_end()
+    │    └ <function _FitLoop.on_advance_end at 0x152a893b7c70>
+    └ <lightning.pytorch.loops.fit_loop._FitLoop object at 0x152a0ae8d870>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 480, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+    │    │                    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+    │    └ <function _call_callback_hooks at 0x152a894dbac0>
+    └ <module 'lightning.pytorch.trainer.call' from '/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightnin...
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 228, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+    │  │        │       │                  │       └ {}
+    │  │        │       │                  └ ()
+    │  │        │       └ <property object at 0x152a893f3830>
+    │  │        └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+    │  └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+    └ <bound method ModelCheckpoint.on_train_epoch_end of <lightning.pytorch.callbacks.model_checkpoint.ModelCheckpoint object at 0...
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 493, in on_train_epoch_end
+    self._save_topk_checkpoint(trainer, monitor_candidates)
+    │    │                     │        └ {'fit/pred_loss': tensor(0.0098, device='cuda:0'), 'fit/sigreg_loss': tensor(0.9023, device='cuda:0'), 'fit/loss': tensor(0.0...
+    │    │                     └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+    │    └ <function ModelCheckpoint._save_topk_checkpoint at 0x152a8957a4d0>
+    └ <lightning.pytorch.callbacks.model_checkpoint.ModelCheckpoint object at 0x152a0ae8ddb0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 591, in _save_topk_checkpoint
+    self._save_none_monitor_checkpoint(trainer, monitor_candidates)
+    │    │                             │        └ {'fit/pred_loss': tensor(0.0098, device='cuda:0'), 'fit/sigreg_loss': tensor(0.9023, device='cuda:0'), 'fit/loss': tensor(0.0...
+    │    │                             └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+    │    └ <function ModelCheckpoint._save_none_monitor_checkpoint at 0x152a8957b0a0>
+    └ <lightning.pytorch.callbacks.model_checkpoint.ModelCheckpoint object at 0x152a0ae8ddb0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 942, in _save_none_monitor_checkpoint
+    self._save_checkpoint(trainer, filepath)
+    │    │                │        └ '/mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/epoch=4-step=69665.ckpt'
+    │    │                └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+    │    └ <function ModelCheckpoint._save_checkpoint at 0x152a8957a560>
+    └ <lightning.pytorch.callbacks.model_checkpoint.ModelCheckpoint object at 0x152a0ae8ddb0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 600, in _save_checkpoint
+    trainer.save_checkpoint(filepath, self.save_weights_only)
+    │       │               │         │    └ False
+    │       │               │         └ <lightning.pytorch.callbacks.model_checkpoint.ModelCheckpoint object at 0x152a0ae8ddb0>
+    │       │               └ '/mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/epoch=4-step=69665.ckpt'
+    │       └ <function Trainer.save_checkpoint at 0x152a893fd480>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1464, in save_checkpoint
+    self.strategy.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+    │    │                        │           │                         └ None
+    │    │                        │           └ '/mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/epoch=4-step=69665.ckpt'
+    │    │                        └ {'epoch': 4, 'global_step': 69665, 'pytorch-lightning_version': '2.6.1', 'state_dict': OrderedDict([('model.encoder.embedding...
+    │    └ <property object at 0x152a893f3560>
+    └ <lightning.pytorch.trainer.trainer.Trainer object at 0x152a0ae0fee0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/strategies/strategy.py", line 491, in save_checkpoint
+    self.checkpoint_io.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+    │    │                             │           │                         └ None
+    │    │                             │           └ '/mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/epoch=4-step=69665.ckpt'
+    │    │                             └ {'epoch': 4, 'global_step': 69665, 'pytorch-lightning_version': '2.6.1', 'state_dict': OrderedDict([('model.encoder.embedding...
+    │    └ <property object at 0x152a89328f40>
+    └ <lightning.pytorch.strategies.single_device.SingleDeviceStrategy object at 0x152a0ae8d4b0>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/utils/atomic_checkpoint.py", line 144, in _atomic_save_checkpoint
+    atomic_torch_save(checkpoint, path)
+    │                 │           └ '/mmfs1/home/alexchin/.cache/stable-pretraining/runs/20260509/171900/b6da82da55cd/checkpoints/epoch=4-step=69665.ckpt'
+    │                 └ {'epoch': 4, 'global_step': 69665, 'pytorch-lightning_version': '2.6.1', 'state_dict': OrderedDict([('model.encoder.embedding...
+    └ <function atomic_torch_save at 0x152a2a686710>
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/utils/atomic_checkpoint.py", line 98, in atomic_torch_save
+    f.write(buf.getvalue())
+    │ │     │   └ <method 'getvalue' of '_io.BytesIO' objects>
+    │ │     └ <_io.BytesIO object at 0x1529f8f6fc40>
+    │ └ <method 'write' of '_io.BufferedWriter' objects>
+    └ <_io.BufferedWriter name=101>
+
+OSError: [Errno 122] Disk quota exceeded
+Error executing job with overrides: ['data=pusht', 'trainer.max_epochs=10']
+Traceback (most recent call last):
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/train.py", line 179, in run
+    manager()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/manager.py", line 1514, in __call__
+    self._trainer.fit(
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 584, in fit
+    call._call_and_handle_interrupt(
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 630, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path, weights_only=weights_only)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1079, in _run
+    results = self._run_stage()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1123, in _run_stage
+    self.fit_loop.run()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 218, in run
+    self.on_advance_end()
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 480, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 228, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 493, in on_train_epoch_end
+    self._save_topk_checkpoint(trainer, monitor_candidates)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 591, in _save_topk_checkpoint
+    self._save_none_monitor_checkpoint(trainer, monitor_candidates)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 942, in _save_none_monitor_checkpoint
+    self._save_checkpoint(trainer, filepath)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py", line 600, in _save_checkpoint
+    trainer.save_checkpoint(filepath, self.save_weights_only)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1464, in save_checkpoint
+    self.strategy.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/strategies/strategy.py", line 491, in save_checkpoint
+    self.checkpoint_io.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/utils/atomic_checkpoint.py", line 144, in _atomic_save_checkpoint
+    atomic_torch_save(checkpoint, path)
+  File "/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/stable_pretraining/utils/atomic_checkpoint.py", line 98, in atomic_torch_save
+    f.write(buf.getvalue())
+OSError: [Errno 122] Disk quota exceeded
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

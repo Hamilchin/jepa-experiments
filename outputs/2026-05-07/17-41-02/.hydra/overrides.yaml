@@ -1,0 +1,5 @@
+- data=pusht
+- output_model_name=lewm
+- subdir=pusht
+- wandb.config.entity=jepa-experiments
+- wandb.config.project=lewm-pusht

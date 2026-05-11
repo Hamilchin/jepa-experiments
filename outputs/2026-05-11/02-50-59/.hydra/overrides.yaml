@@ -1,0 +1,4 @@
+- data=tworoom
+- wm.history_size=1
+- trainer.max_epochs=10
+- wandb.config.name=lewm-tworoom-paper

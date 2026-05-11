@@ -1,0 +1,3 @@
+- data=pusht
+- trainer.max_epochs=10
+- wandb.config.name=lewm-pusht-paper

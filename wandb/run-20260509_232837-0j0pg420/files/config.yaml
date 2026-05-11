@@ -1,0 +1,211 @@
+_wandb:
+    value:
+        cli_version: 0.26.1
+        e:
+            u3v5zts1i1jd62fq5q2pqfjd846lxl4i:
+                args:
+                    - data=dmc
+                    - trainer.max_epochs=10
+                codePath: train.py
+                codePathLocal: train.py
+                cpu_count: 128
+                cpu_count_logical: 256
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "811496558592"
+                        used: "9509007360"
+                email: chinalexan@gmail.com
+                executable: /mmfs1/gscratch/rao/alexchin/le-wm/.venv/bin/python
+                git:
+                    commit: bf04d3e8c3752ac24f3692fbc5f4cf50209fa765
+                    remote: https://github.com/lucas-maes/le-wm
+                gpu: NVIDIA L40S
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-db1e9e42-54a1-521a-1abe-bc0ea5619eda
+                host: g3122
+                memory:
+                    total: "1622993121280"
+                os: Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28
+                program: /mmfs1/gscratch/rao/alexchin/le-wm/train.py
+                python: CPython 3.10.20
+                root: .
+                slurm:
+                    cluster_name: klone
+                    conf: /var/spool/slurmd/conf-cache/slurm.conf
+                    cpus_on_node: "8"
+                    cpus_per_task: "8"
+                    gpus: l40s:1
+                    gpus_on_node: "1"
+                    gtids: "0"
+                    job_account: rao-ckpt
+                    job_cpus_per_node: "8"
+                    job_end_time: "1778394391"
+                    job_gid: "226269"
+                    job_gpus: "0"
+                    job_id: "35132920"
+                    job_name: lewm-reacher-paper
+                    job_nodelist: g3122
+                    job_num_nodes: "1"
+                    job_partition: ckpt-all
+                    job_qos: ckpt-gpu
+                    job_start_time: "1778394331"
+                    job_uid: "1294182"
+                    job_user: alexchin
+                    jobid: "35132920"
+                    localid: "0"
+                    mem_per_node: "65536"
+                    nnodes: "1"
+                    nodeid: "0"
+                    nodelist: g3122
+                    oom_kill_step: "0"
+                    prio_process: "0"
+                    procid: "0"
+                    restart_count: "7"
+                    script_context: prolog_task
+                    submit_dir: /mmfs1/gscratch/rao/alexchin/le-wm
+                    submit_host: klone-login03
+                    task_pid: "32651"
+                    tasks_per_node: "1"
+                    topology_addr: klone-ib-core.klone-ib-leaf-6j16-1.g3122
+                    topology_addr_pattern: switch.switch.node
+                    tres_per_task: cpu=8
+                startedAt: "2026-05-10T06:28:37.125843Z"
+                writerId: u3v5zts1i1jd62fq5q2pqfjd846lxl4i
+        m:
+            - "1": trainer/global_step
+              "6":
+                - 3
+              "7": []
+            - "2": '*'
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.20
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 50
+                - 51
+                - 53
+                - 63
+                - 106
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 50
+                - 51
+                - 53
+                - 63
+                - 106
+            "3":
+                - 7
+                - 13
+                - 66
+            "4": 3.10.20
+            "5": 0.26.1
+            "6": 5.8.0
+            "12": 0.26.1
+            "13": linux-x86_64
+data:
+    value:
+        dataset:
+            frameskip: 5
+            keys_to_cache:
+                - action
+                - observation
+            keys_to_load:
+                - pixels
+                - action
+                - observation
+            name: reacher
+            num_steps: ${eval:'${wm.num_preds} + ${wm.history_size}'}
+dump_object:
+    value: true
+encoder_scale:
+    value: tiny
+img_size:
+    value: 224
+loader:
+    value:
+        batch_size: 128
+        num_workers: ${num_workers}
+        persistent_workers: true
+        pin_memory: true
+        prefetch_factor: 3
+loss:
+    value:
+        sigreg:
+            kwargs:
+                knots: 17
+                num_proj: 1024
+            weight: 0.09
+num_workers:
+    value: 6
+optimizer:
+    value:
+        lr: 5e-05
+        type: AdamW
+        weight_decay: 0.001
+output_model_name:
+    value: lewm
+patch_size:
+    value: 14
+predictor:
+    value:
+        depth: 6
+        dim_head: 64
+        dropout: 0.1
+        emb_dropout: 0
+        heads: 16
+        mlp_dim: 2048
+seed:
+    value: 3072
+slurm.job_id:
+    value: "35132920"
+slurm.task_id:
+    value: N/A
+subdir:
+    value: ${hydra:job.id}
+system.working_dir:
+    value: /mmfs1/gscratch/rao/alexchin/le-wm
+train_split:
+    value: 0.9
+trainer:
+    value:
+        accelerator: gpu
+        devices: auto
+        gradient_clip_val: 1
+        max_epochs: 10
+        precision: bf16
+wandb:
+    value:
+        config:
+            entity: jepa-experiments
+            id: ${subdir}
+            log_model: false
+            name: ${output_model_name}
+            project: lewm-default
+            resume: allow
+        enabled: true
+wm:
+    value:
+        action_dim: 2
+        embed_dim: 192
+        history_size: 3
+        num_preds: 1
+        observation_dim: 6
+        type: lewm

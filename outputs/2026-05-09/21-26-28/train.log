@@ -1,0 +1,3 @@
+[2026-05-09 21:26:28,575][root][INFO] - Cached 'action' from '/tmp/alexchin-35132918/stablewm/datasets/pusht_expert_train.h5'
+[2026-05-09 21:26:28,595][root][INFO] - Cached 'proprio' from '/tmp/alexchin-35132918/stablewm/datasets/pusht_expert_train.h5'
+[2026-05-09 21:26:28,620][root][INFO] - Cached 'state' from '/tmp/alexchin-35132918/stablewm/datasets/pusht_expert_train.h5'

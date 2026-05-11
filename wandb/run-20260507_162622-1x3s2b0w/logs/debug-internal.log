@@ -1,0 +1,17 @@
+{"time":"2026-05-07T16:26:25.83576291-07:00","level":"INFO","msg":"wandb-core"}
+{"time":"2026-05-07T16:26:25.836476217-07:00","level":"INFO","msg":"stream: starting","core version":"0.26.1"}
+{"time":"2026-05-07T16:26:26.439040466-07:00","level":"INFO","msg":"stream: created new stream","id":"1x3s2b0w"}
+{"time":"2026-05-07T16:26:26.439185133-07:00","level":"INFO","msg":"handler: started"}
+{"time":"2026-05-07T16:26:26.440101049-07:00","level":"INFO","msg":"stream: started"}
+{"time":"2026-05-07T16:26:26.440127555-07:00","level":"INFO","msg":"sender: started"}
+{"time":"2026-05-07T16:26:26.440139012-07:00","level":"INFO","msg":"writer: started","stream_id":"1x3s2b0w"}
+{"time":"2026-05-07T16:26:26.663200952-07:00","level":"ERROR","msg":"api: HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2026-05-07T16:26:26.663308567-07:00","level":"ERROR","msg":"runupserter: failed to init run","error":"returned error 404: {\"data\":{\"upsertBucket\":null},\"errors\":[{\"message\":\"entity lewm-planning not found during upsertBucket\",\"path\":[\"upsertBucket\"]}]}"}
+{"time":"2026-05-07T16:26:27.353256572-07:00","level":"ERROR","msg":"sender: uploadConfigFile: runhandle: run not yet initialized"}
+{"time":"2026-05-07T16:26:27.353598953-07:00","level":"ERROR","msg":"runfiles: runhandle: run not yet initialized"}
+{"time":"2026-05-07T16:26:27.353754637-07:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-05-07T16:26:27.353776767-07:00","level":"INFO","msg":"stream: finishing up"}
+{"time":"2026-05-07T16:26:27.353794339-07:00","level":"INFO","msg":"handler: closed"}
+{"time":"2026-05-07T16:26:27.355144633-07:00","level":"INFO","msg":"sender: closed"}
+{"time":"2026-05-07T16:26:27.355152844-07:00","level":"INFO","msg":"stream: all finished"}
+{"time":"2026-05-07T16:26:27.871878333-07:00","level":"ERROR","msg":"stream: runURL: runhandle: run not yet initialized"}

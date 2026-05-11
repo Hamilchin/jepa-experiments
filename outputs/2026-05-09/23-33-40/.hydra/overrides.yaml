@@ -1,0 +1,2 @@
+- data=ogb
+- trainer.max_epochs=10

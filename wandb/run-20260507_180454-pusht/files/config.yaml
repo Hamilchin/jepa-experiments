@@ -1,0 +1,233 @@
+_wandb:
+    value:
+        cli_version: 0.26.1
+        e:
+            yf6wrylfkxp9nf6rf5402xe1etkrqpa0:
+                args:
+                    - data=pusht
+                    - output_model_name=lewm
+                    - subdir=pusht
+                    - wandb.config.entity=jepa-experiments
+                    - wandb.config.project=lewm-pusht
+                codePath: train.py
+                codePathLocal: train.py
+                cpu_count: 128
+                cpu_count_logical: 128
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "811517911040"
+                        used: "12473630720"
+                email: chinalexan@gmail.com
+                executable: /mmfs1/gscratch/rao/alexchin/le-wm/.venv/bin/python
+                git:
+                    commit: bf04d3e8c3752ac24f3692fbc5f4cf50209fa765
+                    remote: https://github.com/lucas-maes/le-wm
+                gpu: NVIDIA L40S
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-e5caea95-321a-df41-2c34-e925f70c6ba0
+                host: g3105
+                memory:
+                    total: "1623035826176"
+                os: Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28
+                program: /mmfs1/gscratch/rao/alexchin/le-wm/train.py
+                python: CPython 3.10.20
+                root: .
+                slurm:
+                    cluster_name: klone
+                    conf: /var/spool/slurmd/conf-cache/slurm.conf
+                    cpus_on_node: "8"
+                    cpus_per_task: "8"
+                    gpus: "1"
+                    gpus_on_node: "1"
+                    gtids: "0"
+                    job_account: cse
+                    job_cpus_per_node: "8"
+                    job_end_time: "1778230666"
+                    job_gid: "226269"
+                    job_gpus: "5"
+                    job_id: "35103874"
+                    job_name: interactive
+                    job_nodelist: g3105
+                    job_num_nodes: "1"
+                    job_partition: gpu-l40s
+                    job_qos: cse-gpu-l40s
+                    job_start_time: "1778201866"
+                    job_uid: "1294182"
+                    job_user: alexchin
+                    jobid: "35103874"
+                    launch_node_ipaddr: 10.64.64.8
+                    localid: "0"
+                    mem_per_node: "49152"
+                    mpi_type: none
+                    nnodes: "1"
+                    nodeid: "0"
+                    nodelist: g3105
+                    oom_kill_step: "0"
+                    prio_process: "0"
+                    procid: "0"
+                    pty_port: "37647"
+                    pty_win_col: "244"
+                    pty_win_row: "69"
+                    script_context: prolog_task
+                    srun_comm_host: 10.64.64.8
+                    srun_comm_port: "45017"
+                    step_id: "4294967290"
+                    step_launcher_port: "45017"
+                    step_nodelist: g3105
+                    step_num_nodes: "1"
+                    step_num_tasks: "1"
+                    step_tasks_per_node: "1"
+                    stepid: "4294967290"
+                    submit_dir: /mmfs1/gscratch/rao/alexchin/le-wm
+                    submit_host: klone-login01
+                    task_pid: "53019"
+                    tasks_per_node: "1"
+                    topology_addr: klone-ib-core.klone-ib-leaf-6j11-1.g3105
+                    topology_addr_pattern: switch.switch.node
+                    tres_per_task: cpu=8
+                startedAt: "2026-05-08T01:04:54.633022Z"
+                writerId: yf6wrylfkxp9nf6rf5402xe1etkrqpa0
+        m:
+            - "1": trainer/global_step
+              "6":
+                - 3
+              "7": []
+            - "2": '*'
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.20
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 50
+                - 51
+                - 53
+                - 63
+                - 106
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 50
+                - 51
+                - 53
+                - 63
+                - 106
+            "3":
+                - 5
+                - 7
+                - 13
+                - 14
+                - 62
+                - 66
+            "4": 3.10.20
+            "5": 0.26.1
+            "6": 5.8.0
+            "12": 0.26.1
+            "13": linux-x86_64
+data:
+    value:
+        dataset:
+            frameskip: 5
+            keys_to_cache:
+                - action
+                - proprio
+                - state
+            keys_to_load:
+                - pixels
+                - action
+                - proprio
+                - state
+            name: pusht_expert_train
+            num_steps: ${eval:'${wm.num_preds} + ${wm.history_size}'}
+dump_object:
+    value: true
+encoder_scale:
+    value: tiny
+img_size:
+    value: 224
+loader:
+    value:
+        batch_size: 128
+        num_workers: ${num_workers}
+        persistent_workers: true
+        pin_memory: true
+        prefetch_factor: 3
+loss:
+    value:
+        sigreg:
+            kwargs:
+                knots: 17
+                num_proj: 1024
+            weight: 0.09
+num_workers:
+    value: 6
+optimizer:
+    value:
+        lr: 5e-05
+        type: AdamW
+        weight_decay: 0.001
+output_model_name:
+    value: lewm
+patch_size:
+    value: 14
+predictor:
+    value:
+        depth: 6
+        dim_head: 64
+        dropout: 0.1
+        emb_dropout: 0
+        heads: 16
+        mlp_dim: 2048
+seed:
+    value: 3072
+slurm.job_id:
+    value: "35103874"
+slurm.task_id:
+    value: N/A
+subdir:
+    value: pusht
+system.working_dir:
+    value: /mmfs1/gscratch/rao/alexchin/le-wm
+train_split:
+    value: 0.9
+trainer:
+    value:
+        accelerator: gpu
+        devices: auto
+        gradient_clip_val: 1
+        max_epochs: 100
+        precision: bf16
+wandb:
+    value:
+        config:
+            entity: jepa-experiments
+            id: ${subdir}
+            log_model: false
+            name: ${output_model_name}
+            project: lewm-pusht
+            resume: allow
+        enabled: true
+wm:
+    value:
+        action_dim: 2
+        embed_dim: 192
+        history_size: 3
+        num_preds: 1
+        proprio_dim: 4
+        state_dim: 7
+        type: lewm

@@ -1,0 +1,4 @@
+- data=pusht
+- num_workers=12
+- loader.batch_size=256
+- loader.prefetch_factor=4
