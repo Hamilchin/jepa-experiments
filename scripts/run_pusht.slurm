@@ -32,7 +32,7 @@ time cp /gscratch/rao/alexchin/stablewm/datasets/pusht_expert_train.h5 $STABLEWM
 echo "[$(date)] staging done; $(du -sh $STABLEWM_HOME)"
 
 # --- copy outputs back to durable storage on exit (success, error, or signal) ---
-SAVE_DIR=/gscratch/rao/alexchin/stablewm/runs/pusht/$SLURM_JOB_ID
+SAVE_DIR=/gscratch/rao/alexchin/stablewm/runs/pusht
 cleanup() {
   echo "[$(date)] cleanup: copying outputs to $SAVE_DIR"
   mkdir -p $SAVE_DIR

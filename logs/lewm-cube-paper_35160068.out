@@ -1,1 +1,1213 @@
 [Mon May 11 11:16:32 PDT 2026] staging dataset to /tmp/alexchin-35160068/stablewm
+[Mon May 11 11:17:50 PDT 2026] staging done; 95G	/tmp/alexchin-35160068/stablewm
+11:18:25 | INFO  | __init__.py | JAX version 0.6.2 available.
+11:18:27 | INFO  | atomic_chec~| [atomic_save] installed crash-safe checkpoint plugin (write to sibling .tmp + fsync + atomic rename)
+[2026-05-11 11:18:28,057][root][INFO] - Cached 'action' from '/tmp/alexchin-35160068/stablewm/datasets/ogbench/cube_single_expert.h5'
+[2026-05-11 11:18:28,701][root][INFO] - Cached 'observation' from '/tmp/alexchin-35160068/stablewm/datasets/ogbench/cube_single_expert.h5'
+[2026-05-11 11:18:30,434][root][INFO] - Merged columns ['proprio_effector_pos', 'proprio_effector_yaw', 'proprio_gripper_contact', 'proprio_gripper_opening', 'proprio_gripper_vel', 'proprio_joint_pos', 'proprio_joint_vel'] into 'proprio' and cached it
+11:18:34 | INFO  | utils.py    | Created ViT-tiny from scratch with config: {'hidden_size': 192, 'num_hidden_layers': 12, 'num_attention_heads': 3, 'intermediate_size': 768, 'image_size': 224, 'patch_size': 14}
+11:18:34 | INFO  | module.py   | Setting up DataModule
+11:18:34 | INFO  | utils.py    | ── Module ────────────────────────────────────────
+11:18:34 | WARN  | module.py   | ! No hyperparameters provided - hyperparameter logging is disabled.
+11:18:34 | INFO  | module.py   |   Setting custom forward method.
+11:18:34 | INFO  | module.py   |   Setting attribute: self.model = <class 'jepa.JEPA'>
+11:18:34 | INFO  | module.py   |   Setting attribute: self.sigreg = <class 'module.SIGReg'>
+11:18:34 | INFO  | module.py   |   Setting attribute: self.optim = <class 'dict'>
+11:18:34 | INFO  | module.py   |   No metrics configuration provided - automatic metric tracking is disabled.
+11:18:36 | INFO  | env_info.py |   EnvironmentDumpCallback initialized (filename=environment.json, async=True)
+11:18:36 | INFO  | utils.py    | ── HuggingFaceCheckpoint ─────────────────────────
+11:18:36 | INFO  | hf_models.py|   save_dir: <cyan>hf_exports</cyan>
+11:18:36 | INFO  | hf_models.py|   per_step: <cyan>False</cyan>  (False ⇒ overwrite single 'last/' subdir; True ⇒ keep step_N/)
+11:18:36 | WARN  | manager.py  | User didn't specify seed, runs won't be exactly reproducible!
+11:18:36 | INFO  | manager.py  |   Manager init: ckpt_path=None, weights_only=True
+11:18:36 | INFO  | utils.py    | ── WorkingDirectory ──────────────────────────────
+11:18:36 | INFO  | manager.py  |   cwd: /mmfs1/gscratch/rao/alexchin/le-wm
+11:18:36 | INFO  | utils.py    | ── Seed ──────────────────────────────────────────
+11:18:36 | INFO  | manager.py  |   seed: None
+11:18:36 | INFO  | utils.py    | ── RunDirectory ──────────────────────────────────
+11:18:36 | INFO  | manager.py  |   cache_dir = /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining
+11:18:36 | INFO  | manager.py  |   ddp: launch_key=slurm-35160068 rank=0 is_rank_zero=True
+11:18:36 | INFO  | utils.py    | ── RunDirectory: requeue probe ───────────────────
+11:18:36 | INFO  | manager.py  |   SLURM session key   = 35160068
+11:18:36 | INFO  | manager.py  |   SLURM_RESTART_COUNT = 2
+11:18:36 | INFO  | manager.py  |   in_requeue          = True
+11:18:36 | INFO  | manager.py  |   → looking up index file: /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/.slurm_index/35160068
+11:18:36 | INFO  | utils.py    | ── RunDirectory (REQUEUE — restored from index) ──
+11:18:36 | INFO  | manager.py  |   run_dir = /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56
+11:18:36 | INFO  | manager.py  |   run_id  = bec2ff032e56
+11:18:36 | INFO  | manager.py  |   rank-0 published handoff → /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/.rank_handoff/slurm-35160068
+11:18:36 | WARN  | manager.py  | ! cache_dir is set but the Trainer was passed as an already-instantiated object. Cannot override default_root_dir cleanly. Consider passing the trainer as a config dict instead.
+11:18:36 | WARN  | manager.py  | ! Hydra run.dir='outputs/2026-05-11/11-18-27' will be ignored for trainer outputs (cache_dir takes precedence).
+11:18:36 | WARN  | manager.py  | ! Hydra sweep.dir='multirun/2026-05-11/11-18-27' will be ignored for trainer outputs (cache_dir takes precedence).
+11:18:36 | INFO  | logger.py   | [RegistryLogger] run_id=bec2ff032e56 run_dir=/mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56 — sidecar.json + summary.json + metrics.csv will live here
+11:18:36 | INFO  | utils.py    | ── RegistryLogger ────────────────────────────────
+11:18:36 | INFO  | manager.py  |   run_dir: /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56
+11:18:36 | INFO  | manager.py  |   run_id:  bec2ff032e56
+11:18:36 | INFO  | utils.py    | ── WandbResume ───────────────────────────────────
+11:18:36 | INFO  | manager.py  |   Injected wandb run ID 'lewm-reacher-paper-v1' from wandb_resume.json
+11:18:36 | INFO  | manager.py  |   project=lewm-default  entity=jepa-experiments
+11:18:36 | INFO  | utils.py    | ── Wandb ─────────────────────────────────────────
+11:18:36 | INFO  | manager.py  |   a Wandb config is provided, not uploading Hydra's:
+11:18:36 | INFO  | utils.py    | ── CSVLogger ─────────────────────────────────────
+11:18:36 | INFO  | manager.py  |   root_dir: /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/
+11:18:36 | INFO  | manager.py  |   save_dir: /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56
+11:18:36 | INFO  | manager.py  |   log_dir: /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/
+11:18:36 | INFO  | utils.py    | ── SignalHandlers ────────────────────────────────
+11:18:36 | INFO  | manager.py  |   SIGUSR1: `0`
+11:18:36 | INFO  | manager.py  |   SIGUSR2: `0`
+11:18:36 | INFO  | manager.py  |   SIGCONT: `0`
+11:18:36 | INFO  | manager.py  |   SIGTERM: `0`
+11:18:36 | INFO  | utils.py    | ── Callbacks ─────────────────────────────────────
+11:18:36 | INFO  | manager.py  |   count: 18
+11:18:36 | INFO  | utils.py    | ── CacheDirCheckpointing ─────────────────────────
+11:18:36 | INFO  | manager.py  |   Saving checkpoints to: /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints
+11:18:36 | WARN  | manager.py  |   Redirecting HuggingFaceCheckpointCallback from 'hf_exports' to '/mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/hf_exports' (cache_dir is active — prevents races on a shared cache)
+11:18:36 | INFO  | manager.py  |   Added requeue checkpoint (filename='last')
+11:18:36 | INFO  | utils.py    | ── LoadPath resolution ───────────────────────────
+11:18:36 | INFO  | manager.py  |   in_requeue = True
+11:18:36 | INFO  | manager.py  |   user ckpt_path = None
+11:18:36 | INFO  | manager.py  |   user weights_only = True
+11:18:36 | INFO  | manager.py  |   → loading /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints/last.ckpt with weights_only=False (full state)
+11:18:36 | INFO  | utils.py    | ── TrainerFit ────────────────────────────────────
+11:18:36 | INFO  | manager.py  |   ckpt_path:     /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints/last.ckpt
+11:18:36 | INFO  | manager.py  |   weights_only:  False
+11:18:36 | OK    | module.py   | ✓ dataset for fit loaded
+11:18:36 | INFO  | module.py   |   setup was done by user
+11:18:36 | INFO  | utils.py    | ── EnvironmentDump ───────────────────────────────
+11:18:36 | INFO  | env_info.py |   log_dir: /gscratch/rao/alexchin/cache/stable-pretraining
+11:18:36 | INFO  | env_info.py |   Running environment dump in background thread (non-blocking)
+11:18:36 | INFO  | env_info.py |   Collecting environment information...
+11:18:36 | OK    | env_info.py | ✓ Python 3.10.20
+11:18:36 | OK    | env_info.py | ✓ System: Linux 4.18.0-513.18.1.el8_9.x86_64 (x86_64)
+11:18:36 | INFO  | env_info.py |   Hostname: g3108
+11:18:36 | OK    | env_info.py | ✓ Background thread started successfully
+11:18:36 | INFO  | trainer_inf~|   linking trainer to DataModule
+11:18:36 | INFO  | utils.py    | ── SklearnCheckpoint ─────────────────────────────
+11:18:36 | INFO  | checkpoint_~|   Sklearn Modules:
+11:18:36 | INFO  | checkpoint_~| 
+┏━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓
+┃ Module   ┃ Name   ┃ Type   ┃
+┣━━━━━━━━━━╋━━━━━━━━╋━━━━━━━━┫
+┗━━━━━━━━━━┻━━━━━━━━┻━━━━━━━━┛
+11:18:36 | INFO  | utils.py    | ── WandbCheckpoint ───────────────────────────────
+11:18:36 | INFO  | utils.py    | ── TrackioCheckpoint ─────────────────────────────
+11:18:36 | INFO  | utils.py    | ── SwanLabCheckpoint ─────────────────────────────
+11:18:36 | INFO  | utils.py    | ── PyTorch Modules ───────────────────────────────
+11:18:36 | WARN  | module.py   | ! You are calling self.parameters which also gives callbacks parameters, to remove them, pass `with_callbacks=False`
+11:18:36 | INFO  | trainer_inf~| \n+-----------------------------------------------------------------+----------------------+--------------------------+--------------------------+---------+
+| Module                                                          | Trainable parameters | Non Trainable parameters | Uninitialized parameters | Buffers |
++-----------------------------------------------------------------+----------------------+--------------------------+--------------------------+---------+
+|                                                                 |             18034628 |                        0 |                        0 |    8245 |
+| callbacks_modules                                               |                    0 |                        0 |                        0 |       0 |
+| callbacks_metrics                                               |                    0 |                        0 |                        0 |       0 |
+| model                                                           |             18034628 |                        0 |                        0 |    8194 |
+| model.encoder                                                   |              5501376 |                        0 |                        0 |       0 |
+| model.encoder.embeddings                                        |               162624 |                        0 |                        0 |       0 |
+| model.encoder.embeddings.patch_embeddings                       |               113088 |                        0 |                        0 |       0 |
+| model.encoder.embeddings.patch_embeddings.projection            |               113088 |                        0 |                        0 |       0 |
+| model.encoder.embeddings.dropout                                |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder                                           |              5338368 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer                                     |              5338368 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.0.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.1.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.2.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.3.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.4.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.5.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.6.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.7.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.8.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9                                   |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention                         |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.attention               |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.attention.query         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.attention.key           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.attention.value         |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.output                  |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.output.dense            |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.attention.output.dropout          |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.intermediate                      |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.intermediate.dense                |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.intermediate.intermediate_act_fn  |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.output                            |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.output.dense                      |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.output.dropout                    |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.layernorm_before                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.9.layernorm_after                   |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10                                  |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention                        |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.attention              |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.attention.query        |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.attention.key          |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.attention.value        |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.output                 |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.output.dense           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.attention.output.dropout         |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.intermediate                     |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.intermediate.dense               |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.intermediate.intermediate_act_fn |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.output                           |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.output.dense                     |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.output.dropout                   |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.layernorm_before                 |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.10.layernorm_after                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11                                  |               444864 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention                        |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.attention              |               111168 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.attention.query        |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.attention.key          |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.attention.value        |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.output                 |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.output.dense           |                37056 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.attention.output.dropout         |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.intermediate                     |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.intermediate.dense               |               148224 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.intermediate.intermediate_act_fn |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.output                           |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.output.dense                     |               147648 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.output.dropout                   |                    0 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.layernorm_before                 |                  384 |                        0 |                        0 |       0 |
+| model.encoder.encoder.layer.11.layernorm_after                  |                  384 |                        0 |                        0 |       0 |
+| model.encoder.layernorm                                         |                  384 |                        0 |                        0 |       0 |
+| model.predictor                                                 |             10791360 |                        0 |                        0 |       0 |
+| model.predictor.dropout                                         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer                                     |             10790784 |                        0 |                        0 |       0 |
+| model.predictor.transformer.norm                                |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers                              |             10790400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.0.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.1.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.2.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.3.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.4.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5                            |              1798400 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn                       |               787008 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.norm                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.attend                |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.to_qkv                |               589824 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.to_out                |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.to_out.0              |               196800 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.attn.to_out.1              |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp                        |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net                    |               789056 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.0                  |                  384 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.1                  |               395264 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.2                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.3                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.4                  |               393408 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.mlp.net.5                  |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.norm1                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.norm2                      |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.adaLN_modulation           |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.adaLN_modulation.0         |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.layers.5.adaLN_modulation.1         |               222336 |                        0 |                        0 |       0 |
+| model.predictor.transformer.input_proj                          |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.cond_proj                           |                    0 |                        0 |                        0 |       0 |
+| model.predictor.transformer.output_proj                         |                    0 |                        0 |                        0 |       0 |
+| model.action_encoder                                            |               156356 |                        0 |                        0 |       0 |
+| model.action_encoder.patch_embed                                |                  260 |                        0 |                        0 |       0 |
+| model.action_encoder.embed                                      |               156096 |                        0 |                        0 |       0 |
+| model.action_encoder.embed.0                                    |                 8448 |                        0 |                        0 |       0 |
+| model.action_encoder.embed.1                                    |                    0 |                        0 |                        0 |       0 |
+| model.action_encoder.embed.2                                    |               147648 |                        0 |                        0 |       0 |
+| model.projector                                                 |               792768 |                        0 |                        0 |    4097 |
+| model.projector.net                                             |               792768 |                        0 |                        0 |    4097 |
+| model.projector.net.0                                           |               395264 |                        0 |                        0 |       0 |
+| model.projector.net.1                                           |                 4096 |                        0 |                        0 |    4097 |
+| model.projector.net.2                                           |                    0 |                        0 |                        0 |       0 |
+| model.projector.net.3                                           |               393408 |                        0 |                        0 |       0 |
+| model.pred_proj                                                 |               792768 |                        0 |                        0 |    4097 |
+| model.pred_proj.net                                             |               792768 |                        0 |                        0 |    4097 |
+| model.pred_proj.net.0                                           |               395264 |                        0 |                        0 |       0 |
+| model.pred_proj.net.1                                           |                 4096 |                        0 |                        0 |    4097 |
+| model.pred_proj.net.2                                           |                    0 |                        0 |                        0 |       0 |
+| model.pred_proj.net.3                                           |               393408 |                        0 |                        0 |       0 |
+| sigreg                                                          |                    0 |                        0 |                        0 |      51 |
++-----------------------------------------------------------------+----------------------+--------------------------+--------------------------+---------+
+11:18:36 | INFO  | utils.py    | ── SLURM ─────────────────────────────────────────
+11:18:36 | INFO  | trainer_inf~|   Job ID: 35160068
+11:18:36 | INFO  | trainer_inf~|   Task ID: N/A
+11:18:36 | INFO  | trainer_inf~|   Job Name: lewm-cube-paper
+11:18:36 | INFO  | trainer_inf~|   Nodes: 1
+11:18:36 | INFO  | trainer_inf~|   Tasks: N/A
+11:18:36 | INFO  | trainer_inf~|   CPUs per node: 8
+11:18:36 | INFO  | trainer_inf~|   CPUs per task: 8
+11:18:36 | INFO  | trainer_inf~|   Memory per node: 65536
+11:18:36 | INFO  | trainer_inf~|   Memory per CPU: N/A
+11:18:36 | INFO  | trainer_inf~|   Time limit: N/A
+11:18:36 | INFO  | trainer_inf~|   Partition: ckpt-all
+11:18:36 | INFO  | trainer_inf~|   Node List: g3108
+11:18:36 | INFO  | trainer_inf~|   Submit Directory: /mmfs1/gscratch/rao/alexchin/le-wm/scripts
+11:18:36 | WARN  | env_info.py | ! pip freeze failed: Command '['/mmfs1/gscratch/rao/alexchin/le-wm/.venv/bin/python', '-m', 'pip', 'freeze']' returned non-zero exit status 1.
+11:18:36 | OK    | env_info.py | ✓ Packages: 0 packages collected in 0.02s
+11:18:36 | OK    | env_info.py | ✓ NVIDIA Driver: 580.126.20
+11:18:37 | INFO  | checkpoint_~|   Checking for non PyTorch modules to load
+11:18:37 | ERROR | checkpoint_~| ! Wandb run ID mismatch: checkpoint expects 'lewm-cube-paper-v1' but the logger is configured with 'lewm-reacher-paper-v1'. The run may not resume correctly. This can happen if wandb.init() was called before the Manager had a chance to inject the ID.
+11:18:37 | INFO  | utils.py    | ── Optimizers ────────────────────────────────────
+11:18:37 | INFO  | module.py   |   Optimizer specified by Dict with keys ['model_opt']
+11:18:37 | INFO  | module.py   | 
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Optimizer   ┃ Pattern   ┃   Matched Modules ┃   Param Tensors ┃   Total Params ┃   RequiresGrad Tensors ┃
+┣━━━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃ model_opt   ┃ model     ┃               365 ┃             297 ┃       18034628 ┃                    297 ┃
+┗━━━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━┛
+11:18:37 | INFO  | lr_schedule~| 	User provided a dict
+11:18:37 | OK    | env_info.py | ✓ Git: main @ bf04d3e8
+11:18:37 | INFO  | env_info.py |   Remote: git@github.com:Hamilchin/jepa-experiments.git
+11:18:37 | WARN  | env_info.py | ! Working directory has uncommitted changes
+11:18:37 | OK    | env_info.py | ✓ SLURM Job: 35160068
+11:18:37 | INFO  | env_info.py |   Name: lewm-cube-paper
+11:18:37 | INFO  | env_info.py |   Partition: ckpt-all
+11:18:37 | INFO  | env_info.py |   Nodes: 1
+11:18:37 | INFO  | env_info.py |   Tasks: N/A
+11:18:37 | OK    | env_info.py | ✓ Environment: 4 relevant variables captured
+11:18:37 | INFO  | env_info.py |   Serializing environment data...
+11:18:37 | INFO  | env_info.py |   File exists, using version 30: environment_v30.json
+11:18:37 | INFO  | env_info.py |   File exists, using version 30: requirements_frozen_v30.txt
+11:18:37 | INFO  | env_info.py |   Save directory: /gscratch/rao/alexchin/cache/stable-pretraining
+11:18:37 | INFO  | env_info.py |   Writing environment to temp file...
+11:18:37 | INFO  | env_info.py |   Moving to: environment_v30.json
+11:18:37 | OK    | env_info.py | ✓ Environment file saved (42.1 KB)
+11:18:37 | OK    | env_info.py | ✓ Requirements file saved (0.1 KB)
+11:18:37 | INFO  | module.py   |   Configured optimizer 'model_opt' (modules=365, param_tensors=297, total_params=18034628) with LinearWarmupCosineAnnealingLR scheduler.
+┏━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃   ┃ Name              ┃ Type       ┃ Params ┃ Mode  ┃ FLOPs ┃
+┡━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│ 0 │ callbacks_modules │ ModuleDict │      0 │ train │     0 │
+│ 1 │ callbacks_metrics │ ModuleDict │      0 │ train │     0 │
+│ 2 │ model             │ JEPA       │ 18.0 M │ train │     0 │
+│ 3 │ sigreg            │ SIGReg     │      0 │ train │     0 │
+└───┴───────────────────┴────────────┴────────┴───────┴───────┘
+Trainable params: 18.0 M                                                        
+Non-trainable params: 0                                                         
+Total params: 18.0 M                                                            
+Total estimated model params size (MB): 72                                      
+Modules in train mode: 368                                                      
+Modules in eval mode: 0                                                         
+Total FLOPs: 0                                                                  
+11:18:38 | INFO  | logger.py   | [RegistryLogger] summary.json flushed (0 metrics, step=0, epoch=0) → /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/summary.json
+11:19:01 | INFO  | trainer_inf~| \n+----------------------------+-----------------------+
+|           Metric           |         Value         |
++----------------------------+-----------------------+
+|       [0;34;40mvalidate/loss[0m        |  [0;32;40m0.13059762120246887[0m  |
+|    [0;34;40mvalidate/loss_epoch[0m     |  [0;32;40m0.13059762120246887[0m  |
+|     [0;34;40mvalidate/pred_loss[0m     | [0;32;40m0.0036444920115172863[0m |
+|  [0;34;40mvalidate/pred_loss_epoch[0m  | [0;32;40m0.0036444920115172863[0m |
+|    [0;34;40mvalidate/sigreg_loss[0m    |        [0;32;40m1.40625[0m        |
+| [0;34;40mvalidate/sigreg_loss_epoch[0m |        [0;32;40m1.40625[0m        |
++----------------------------+-----------------------+
+11:19:01 | WARN  | hf_models.py| ! No Hugging Face (PreTrainedModel) submodules found in LightningModule.
+11:19:01 | INFO  | utils.py    | ── Optimizers ────────────────────────────────────
+11:19:01 | INFO  | module.py   |   self.optimizers() gave us 1 optimizers
+11:19:01 | WARN  | module.py   | ! No clip val found for optimizer default_0
+11:19:01 | WARN  | module.py   | ! Will use the Trainer's value of 1.0
+11:19:01 | WARN  | module.py   | ! No clip algorithm found for optimizer default_0
+11:19:01 | WARN  | module.py   | ! Will use the Trainer's value of None
+11:19:01 | OK    | module.py   | ✓ Optimizer check complete:
++------------+-----------+----------------+-----------+-----------+
+| Opt. Index | Opt. name |      opt       | clip val. | clip alg. |
++------------+-----------+----------------+-----------+-----------+
+|     0      | default_0 | LightningAdamW |    1.0    |    None   |
++------------+-----------+----------------+-----------+-----------+
+11:19:04 | OK    | unused_para~| ✓ all tracked parameters received gradients on the first backward pass
+11:19:04 | INFO  | unused_para~|   hooks removed, callback disabled
+[Epoch 7/10] step 50/12796 (3.0 it/s)
+[Epoch 7/10] step 100/12796 (3.3 it/s)
+[Epoch 7/10] step 150/12796 (3.5 it/s)
+[Epoch 7/10] step 200/12796 (3.6 it/s)
+[Epoch 7/10] step 250/12796 (3.7 it/s)
+[Epoch 7/10] step 300/12796 (3.7 it/s)
+[Epoch 7/10] step 350/12796 (3.7 it/s)
+[Epoch 7/10] step 400/12796 (3.8 it/s)
+[Epoch 7/10] step 450/12796 (3.9 it/s)
+[Epoch 7/10] step 500/12796 (3.9 it/s)
+[Epoch 7/10] step 550/12796 (3.9 it/s)
+[Epoch 7/10] step 600/12796 (3.9 it/s)
+[Epoch 7/10] step 650/12796 (3.9 it/s)
+[Epoch 7/10] step 700/12796 (4.0 it/s)
+[Epoch 7/10] step 750/12796 (4.0 it/s)
+[Epoch 7/10] step 800/12796 (4.0 it/s)
+[Epoch 7/10] step 850/12796 (4.0 it/s)
+[Epoch 7/10] step 900/12796 (4.0 it/s)
+[Epoch 7/10] step 950/12796 (4.0 it/s)
+[Epoch 7/10] step 1000/12796 (4.0 it/s)
+[Epoch 7/10] step 1050/12796 (4.0 it/s)
+[Epoch 7/10] step 1100/12796 (4.1 it/s)
+[Epoch 7/10] step 1150/12796 (4.1 it/s)
+[Epoch 7/10] step 1200/12796 (4.1 it/s)
+[Epoch 7/10] step 1250/12796 (4.1 it/s)
+[Epoch 7/10] step 1300/12796 (4.1 it/s)
+[Epoch 7/10] step 1350/12796 (4.1 it/s)
+[Epoch 7/10] step 1400/12796 (4.1 it/s)
+[Epoch 7/10] step 1450/12796 (4.1 it/s)
+[Epoch 7/10] step 1500/12796 (4.1 it/s)
+[Epoch 7/10] step 1550/12796 (4.1 it/s)
+[Epoch 7/10] step 1600/12796 (4.1 it/s)
+[Epoch 7/10] step 1650/12796 (4.1 it/s)
+[Epoch 7/10] step 1700/12796 (4.1 it/s)
+[Epoch 7/10] step 1750/12796 (4.1 it/s)
+[Epoch 7/10] step 1800/12796 (4.1 it/s)
+[Epoch 7/10] step 1850/12796 (4.0 it/s)
+[Epoch 7/10] step 1900/12796 (4.0 it/s)
+[Epoch 7/10] step 1950/12796 (4.1 it/s)
+[Epoch 7/10] step 2000/12796 (4.1 it/s)
+[Epoch 7/10] step 2050/12796 (4.1 it/s)
+[Epoch 7/10] step 2100/12796 (4.1 it/s)
+[Epoch 7/10] step 2150/12796 (4.1 it/s)
+[Epoch 7/10] step 2200/12796 (4.1 it/s)
+[Epoch 7/10] step 2250/12796 (4.1 it/s)
+[Epoch 7/10] step 2300/12796 (4.1 it/s)
+[Epoch 7/10] step 2350/12796 (4.1 it/s)
+[Epoch 7/10] step 2400/12796 (4.1 it/s)
+[Epoch 7/10] step 2450/12796 (4.1 it/s)
+[Epoch 7/10] step 2500/12796 (4.1 it/s)
+[Epoch 7/10] step 2550/12796 (4.1 it/s)
+[Epoch 7/10] step 2600/12796 (4.1 it/s)
+[Epoch 7/10] step 2650/12796 (4.1 it/s)
+[Epoch 7/10] step 2700/12796 (4.1 it/s)
+[Epoch 7/10] step 2750/12796 (4.1 it/s)
+[Epoch 7/10] step 2800/12796 (4.1 it/s)
+[Epoch 7/10] step 2850/12796 (4.1 it/s)
+[Epoch 7/10] step 2900/12796 (4.1 it/s)
+[Epoch 7/10] step 2950/12796 (4.1 it/s)
+[Epoch 7/10] step 3000/12796 (4.1 it/s)
+[Epoch 7/10] step 3050/12796 (4.1 it/s)
+[Epoch 7/10] step 3100/12796 (4.1 it/s)
+[Epoch 7/10] step 3150/12796 (4.1 it/s)
+[Epoch 7/10] step 3200/12796 (4.1 it/s)
+[Epoch 7/10] step 3250/12796 (4.1 it/s)
+[Epoch 7/10] step 3300/12796 (4.1 it/s)
+[Epoch 7/10] step 3350/12796 (4.1 it/s)
+[Epoch 7/10] step 3400/12796 (4.1 it/s)
+[Epoch 7/10] step 3450/12796 (4.1 it/s)
+[Epoch 7/10] step 3500/12796 (4.0 it/s)
+[Epoch 7/10] step 3550/12796 (4.0 it/s)
+[Epoch 7/10] step 3600/12796 (4.0 it/s)
+[Epoch 7/10] step 3650/12796 (4.0 it/s)
+[Epoch 7/10] step 3700/12796 (4.0 it/s)
+[Epoch 7/10] step 3750/12796 (4.0 it/s)
+[Epoch 7/10] step 3800/12796 (4.0 it/s)
+[Epoch 7/10] step 3850/12796 (4.1 it/s)
+[Epoch 7/10] step 3900/12796 (4.1 it/s)
+[Epoch 7/10] step 3950/12796 (4.1 it/s)
+[Epoch 7/10] step 4000/12796 (4.0 it/s)
+[Epoch 7/10] step 4050/12796 (4.0 it/s)
+[Epoch 7/10] step 4100/12796 (4.0 it/s)
+[Epoch 7/10] step 4150/12796 (4.1 it/s)
+[Epoch 7/10] step 4200/12796 (4.0 it/s)
+[Epoch 7/10] step 4250/12796 (4.0 it/s)
+[Epoch 7/10] step 4300/12796 (4.0 it/s)
+[Epoch 7/10] step 4350/12796 (4.0 it/s)
+[Epoch 7/10] step 4400/12796 (4.0 it/s)
+[Epoch 7/10] step 4450/12796 (4.0 it/s)
+[Epoch 7/10] step 4500/12796 (4.0 it/s)
+[Epoch 7/10] step 4550/12796 (4.0 it/s)
+[Epoch 7/10] step 4600/12796 (4.0 it/s)
+[Epoch 7/10] step 4650/12796 (4.0 it/s)
+[Epoch 7/10] step 4700/12796 (4.0 it/s)
+[Epoch 7/10] step 4750/12796 (4.0 it/s)
+[Epoch 7/10] step 4800/12796 (4.0 it/s)
+[Epoch 7/10] step 4850/12796 (4.0 it/s)
+[Epoch 7/10] step 4900/12796 (4.0 it/s)
+[Epoch 7/10] step 4950/12796 (4.0 it/s)
+[Epoch 7/10] step 5000/12796 (4.0 it/s)
+[Epoch 7/10] step 5050/12796 (4.0 it/s)
+[Epoch 7/10] step 5100/12796 (4.0 it/s)
+[Epoch 7/10] step 5150/12796 (4.0 it/s)
+[Epoch 7/10] step 5200/12796 (4.0 it/s)
+[Epoch 7/10] step 5250/12796 (4.0 it/s)
+[Epoch 7/10] step 5300/12796 (4.0 it/s)
+[Epoch 7/10] step 5350/12796 (4.0 it/s)
+[Epoch 7/10] step 5400/12796 (4.0 it/s)
+[Epoch 7/10] step 5450/12796 (4.0 it/s)
+[Epoch 7/10] step 5500/12796 (4.0 it/s)
+[Epoch 7/10] step 5550/12796 (4.0 it/s)
+[Epoch 7/10] step 5600/12796 (4.0 it/s)
+[Epoch 7/10] step 5650/12796 (4.0 it/s)
+[Epoch 7/10] step 5700/12796 (4.0 it/s)
+[Epoch 7/10] step 5750/12796 (4.0 it/s)
+[Epoch 7/10] step 5800/12796 (4.0 it/s)
+[Epoch 7/10] step 5850/12796 (4.0 it/s)
+[Epoch 7/10] step 5900/12796 (4.0 it/s)
+[Epoch 7/10] step 5950/12796 (4.0 it/s)
+[Epoch 7/10] step 6000/12796 (4.0 it/s)
+[Epoch 7/10] step 6050/12796 (4.0 it/s)
+[Epoch 7/10] step 6100/12796 (4.0 it/s)
+[Epoch 7/10] step 6150/12796 (4.0 it/s)
+[Epoch 7/10] step 6200/12796 (4.0 it/s)
+[Epoch 7/10] step 6250/12796 (4.0 it/s)
+[Epoch 7/10] step 6300/12796 (4.0 it/s)
+[Epoch 7/10] step 6350/12796 (4.0 it/s)
+[Epoch 7/10] step 6400/12796 (4.0 it/s)
+[Epoch 7/10] step 6450/12796 (4.0 it/s)
+[Epoch 7/10] step 6500/12796 (4.0 it/s)
+[Epoch 7/10] step 6550/12796 (4.0 it/s)
+[Epoch 7/10] step 6600/12796 (4.0 it/s)
+[Epoch 7/10] step 6650/12796 (4.0 it/s)
+[Epoch 7/10] step 6700/12796 (4.0 it/s)
+[Epoch 7/10] step 6750/12796 (4.0 it/s)
+[Epoch 7/10] step 6800/12796 (4.0 it/s)
+[Epoch 7/10] step 6850/12796 (4.0 it/s)
+[Epoch 7/10] step 6900/12796 (4.0 it/s)
+[Epoch 7/10] step 6950/12796 (4.0 it/s)
+[Epoch 7/10] step 7000/12796 (4.0 it/s)
+[Epoch 7/10] step 7050/12796 (4.0 it/s)
+[Epoch 7/10] step 7100/12796 (4.0 it/s)
+[Epoch 7/10] step 7150/12796 (4.0 it/s)
+[Epoch 7/10] step 7200/12796 (4.0 it/s)
+[Epoch 7/10] step 7250/12796 (4.0 it/s)
+[Epoch 7/10] step 7300/12796 (4.0 it/s)
+[Epoch 7/10] step 7350/12796 (4.0 it/s)
+[Epoch 7/10] step 7400/12796 (4.0 it/s)
+[Epoch 7/10] step 7450/12796 (4.0 it/s)
+[Epoch 7/10] step 7500/12796 (4.0 it/s)
+[Epoch 7/10] step 7550/12796 (4.0 it/s)
+[Epoch 7/10] step 7600/12796 (4.0 it/s)
+[Epoch 7/10] step 7650/12796 (4.0 it/s)
+[Epoch 7/10] step 7700/12796 (4.0 it/s)
+[Epoch 7/10] step 7750/12796 (4.0 it/s)
+[Epoch 7/10] step 7800/12796 (4.0 it/s)
+[Epoch 7/10] step 7850/12796 (4.0 it/s)
+[Epoch 7/10] step 7900/12796 (4.0 it/s)
+[Epoch 7/10] step 7950/12796 (4.0 it/s)
+[Epoch 7/10] step 8000/12796 (4.0 it/s)
+[Epoch 7/10] step 8050/12796 (4.0 it/s)
+[Epoch 7/10] step 8100/12796 (4.0 it/s)
+[Epoch 7/10] step 8150/12796 (4.0 it/s)
+[Epoch 7/10] step 8200/12796 (4.0 it/s)
+[Epoch 7/10] step 8250/12796 (4.0 it/s)
+[Epoch 7/10] step 8300/12796 (4.0 it/s)
+[Epoch 7/10] step 8350/12796 (4.0 it/s)
+[Epoch 7/10] step 8400/12796 (4.0 it/s)
+[Epoch 7/10] step 8450/12796 (4.0 it/s)
+[Epoch 7/10] step 8500/12796 (4.0 it/s)
+[Epoch 7/10] step 8550/12796 (4.0 it/s)
+[Epoch 7/10] step 8600/12796 (4.0 it/s)
+[Epoch 7/10] step 8650/12796 (4.0 it/s)
+[Epoch 7/10] step 8700/12796 (4.0 it/s)
+[Epoch 7/10] step 8750/12796 (4.0 it/s)
+[Epoch 7/10] step 8800/12796 (4.0 it/s)
+[Epoch 7/10] step 8850/12796 (4.0 it/s)
+[Epoch 7/10] step 8900/12796 (4.0 it/s)
+[Epoch 7/10] step 8950/12796 (4.0 it/s)
+[Epoch 7/10] step 9000/12796 (4.0 it/s)
+[Epoch 7/10] step 9050/12796 (4.0 it/s)
+[Epoch 7/10] step 9100/12796 (4.0 it/s)
+[Epoch 7/10] step 9150/12796 (4.0 it/s)
+[Epoch 7/10] step 9200/12796 (4.0 it/s)
+[Epoch 7/10] step 9250/12796 (4.0 it/s)
+[Epoch 7/10] step 9300/12796 (4.0 it/s)
+[Epoch 7/10] step 9350/12796 (4.0 it/s)
+[Epoch 7/10] step 9400/12796 (4.0 it/s)
+[Epoch 7/10] step 9450/12796 (4.0 it/s)
+[Epoch 7/10] step 9500/12796 (4.0 it/s)
+[Epoch 7/10] step 9550/12796 (4.0 it/s)
+[Epoch 7/10] step 9600/12796 (4.0 it/s)
+[Epoch 7/10] step 9650/12796 (4.0 it/s)
+[Epoch 7/10] step 9700/12796 (4.0 it/s)
+[Epoch 7/10] step 9750/12796 (4.0 it/s)
+[Epoch 7/10] step 9800/12796 (4.0 it/s)
+[Epoch 7/10] step 9850/12796 (4.0 it/s)
+[Epoch 7/10] step 9900/12796 (4.0 it/s)
+[Epoch 7/10] step 9950/12796 (4.0 it/s)
+[Epoch 7/10] step 10000/12796 (4.0 it/s)
+[Epoch 7/10] step 10050/12796 (4.0 it/s)
+[Epoch 7/10] step 10100/12796 (4.0 it/s)
+[Epoch 7/10] step 10150/12796 (4.0 it/s)
+[Epoch 7/10] step 10200/12796 (4.0 it/s)
+[Epoch 7/10] step 10250/12796 (4.0 it/s)
+[Epoch 7/10] step 10300/12796 (4.0 it/s)
+[Epoch 7/10] step 10350/12796 (4.0 it/s)
+[Epoch 7/10] step 10400/12796 (4.0 it/s)
+[Epoch 7/10] step 10450/12796 (4.0 it/s)
+[Epoch 7/10] step 10500/12796 (4.0 it/s)
+[Epoch 7/10] step 10550/12796 (4.0 it/s)
+[Epoch 7/10] step 10600/12796 (4.0 it/s)
+[Epoch 7/10] step 10650/12796 (4.0 it/s)
+[Epoch 7/10] step 10700/12796 (4.0 it/s)
+[Epoch 7/10] step 10750/12796 (4.0 it/s)
+[Epoch 7/10] step 10800/12796 (4.0 it/s)
+[Epoch 7/10] step 10850/12796 (4.0 it/s)
+[Epoch 7/10] step 10900/12796 (4.0 it/s)
+[Epoch 7/10] step 10950/12796 (4.0 it/s)
+[Epoch 7/10] step 11000/12796 (4.0 it/s)
+[Epoch 7/10] step 11050/12796 (4.0 it/s)
+[Epoch 7/10] step 11100/12796 (4.0 it/s)
+[Epoch 7/10] step 11150/12796 (4.0 it/s)
+[Epoch 7/10] step 11200/12796 (4.0 it/s)
+[Epoch 7/10] step 11250/12796 (4.0 it/s)
+[Epoch 7/10] step 11300/12796 (4.0 it/s)
+[Epoch 7/10] step 11350/12796 (4.0 it/s)
+[Epoch 7/10] step 11400/12796 (4.0 it/s)
+[Epoch 7/10] step 11450/12796 (4.0 it/s)
+[Epoch 7/10] step 11500/12796 (4.0 it/s)
+[Epoch 7/10] step 11550/12796 (4.0 it/s)
+[Epoch 7/10] step 11600/12796 (4.0 it/s)
+[Epoch 7/10] step 11650/12796 (4.0 it/s)
+[Epoch 7/10] step 11700/12796 (4.0 it/s)
+[Epoch 7/10] step 11750/12796 (4.0 it/s)
+[Epoch 7/10] step 11800/12796 (4.0 it/s)
+[Epoch 7/10] step 11850/12796 (4.0 it/s)
+[Epoch 7/10] step 11900/12796 (4.0 it/s)
+[Epoch 7/10] step 11950/12796 (4.0 it/s)
+[Epoch 7/10] step 12000/12796 (4.0 it/s)
+[Epoch 7/10] step 12050/12796 (4.0 it/s)
+[Epoch 7/10] step 12100/12796 (4.0 it/s)
+[Epoch 7/10] step 12150/12796 (4.0 it/s)
+[Epoch 7/10] step 12200/12796 (4.0 it/s)
+[Epoch 7/10] step 12250/12796 (4.0 it/s)
+[Epoch 7/10] step 12300/12796 (4.0 it/s)
+[Epoch 7/10] step 12350/12796 (4.0 it/s)
+[Epoch 7/10] step 12400/12796 (4.0 it/s)
+[Epoch 7/10] step 12450/12796 (4.0 it/s)
+[Epoch 7/10] step 12500/12796 (4.0 it/s)
+[Epoch 7/10] step 12550/12796 (4.0 it/s)
+[Epoch 7/10] step 12600/12796 (4.0 it/s)
+[Epoch 7/10] step 12650/12796 (4.0 it/s)
+[Epoch 7/10] step 12700/12796 (4.0 it/s)
+[Epoch 7/10] step 12750/12796 (4.0 it/s)
+12:18:23 | INFO  | trainer_inf~| \n+----------------------------+-----------------------+
+|           Metric           |         Value         |
++----------------------------+-----------------------+
+|          [0;34;40mfit/loss[0m          |  [0;32;40m0.09129973500967026[0m  |
+|       [0;34;40mfit/pred_loss[0m        |  [0;32;40m0.005850516259670258[0m |
+|      [0;34;40mfit/sigreg_loss[0m       |       [0;32;40m0.94921875[0m      |
+|    [0;34;40mhparams/lr_default_0[0m    | [0;32;40m4.868199084739899e-06[0m |
+|       [0;34;40mvalidate/loss[0m        |  [0;32;40m0.12872879207134247[0m  |
+|    [0;34;40mvalidate/loss_epoch[0m     |  [0;32;40m0.12872879207134247[0m  |
+|     [0;34;40mvalidate/pred_loss[0m     | [0;32;40m0.0032207213807851076[0m |
+|  [0;34;40mvalidate/pred_loss_epoch[0m  | [0;32;40m0.0032207213807851076[0m |
+|    [0;34;40mvalidate/sigreg_loss[0m    |   [0;32;40m1.3945081233978271[0m  |
+| [0;34;40mvalidate/sigreg_loss_epoch[0m |   [0;32;40m1.3945081233978271[0m  |
++----------------------------+-----------------------+
+[Epoch 7/10] done in 3561.8s
+12:18:23 | INFO  | checkpoint_~|   Checking for non PyTorch modules to save
+12:18:24 | INFO  | checkpoint_~|   Saved wandb resume info to checkpoint: {'id': 'lewm-cube-paper-v1', 'project': 'lewm-default', 'entity': 'jepa-experiments'}
+12:18:24 | INFO  | checkpoint_~|   Wrote /mmfs1/gscratch/rao/alexchin/le-wm/wandb_resume.json
+12:18:24 | INFO  | atomic_chec~| [atomic_save] → /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints/epoch=7-step=102368.ckpt
+12:18:24 | INFO  | atomic_chec~| [atomic_save] ✓ epoch=7-step=102368.ckpt saved (206.8 MiB, serialise=0.16s write=0.47s rename=0.2ms)
+12:18:24 | INFO  | checkpoint_~|   Checking for non PyTorch modules to save
+12:18:24 | INFO  | checkpoint_~|   Saved wandb resume info to checkpoint: {'id': 'lewm-cube-paper-v1', 'project': 'lewm-default', 'entity': 'jepa-experiments'}
+12:18:24 | INFO  | checkpoint_~|   Wrote /mmfs1/gscratch/rao/alexchin/le-wm/wandb_resume.json
+12:18:24 | INFO  | atomic_chec~| [atomic_save] → /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints/last.ckpt
+12:18:25 | INFO  | atomic_chec~| [atomic_save] ✓ last.ckpt saved (206.8 MiB, serialise=0.17s write=0.62s rename=3.0ms)
+[Epoch 8/10] step 50/12796 (3.3 it/s)
+[Epoch 8/10] step 100/12796 (3.6 it/s)
+[Epoch 8/10] step 150/12796 (3.7 it/s)
+[Epoch 8/10] step 200/12796 (3.8 it/s)
+[Epoch 8/10] step 250/12796 (3.6 it/s)
+[Epoch 8/10] step 300/12796 (3.7 it/s)
+[Epoch 8/10] step 350/12796 (3.8 it/s)
+[Epoch 8/10] step 400/12796 (3.8 it/s)
+[Epoch 8/10] step 450/12796 (3.8 it/s)
+[Epoch 8/10] step 500/12796 (3.8 it/s)
+[Epoch 8/10] step 550/12796 (3.9 it/s)
+[Epoch 8/10] step 600/12796 (3.9 it/s)
+[Epoch 8/10] step 650/12796 (3.9 it/s)
+[Epoch 8/10] step 700/12796 (3.9 it/s)
+[Epoch 8/10] step 750/12796 (3.9 it/s)
+[Epoch 8/10] step 800/12796 (3.9 it/s)
+[Epoch 8/10] step 850/12796 (3.9 it/s)
+[Epoch 8/10] step 900/12796 (3.9 it/s)
+[Epoch 8/10] step 950/12796 (3.9 it/s)
+[Epoch 8/10] step 1000/12796 (3.9 it/s)
+[Epoch 8/10] step 1050/12796 (3.9 it/s)
+[Epoch 8/10] step 1100/12796 (3.9 it/s)
+[Epoch 8/10] step 1150/12796 (3.9 it/s)
+[Epoch 8/10] step 1200/12796 (3.9 it/s)
+[Epoch 8/10] step 1250/12796 (4.0 it/s)
+[Epoch 8/10] step 1300/12796 (4.0 it/s)
+[Epoch 8/10] step 1350/12796 (4.0 it/s)
+[Epoch 8/10] step 1400/12796 (4.0 it/s)
+[Epoch 8/10] step 1450/12796 (3.9 it/s)
+[Epoch 8/10] step 1500/12796 (3.9 it/s)
+[Epoch 8/10] step 1550/12796 (3.9 it/s)
+[Epoch 8/10] step 1600/12796 (3.9 it/s)
+[Epoch 8/10] step 1650/12796 (3.9 it/s)
+[Epoch 8/10] step 1700/12796 (3.9 it/s)
+[Epoch 8/10] step 1750/12796 (3.9 it/s)
+[Epoch 8/10] step 1800/12796 (3.9 it/s)
+[Epoch 8/10] step 1850/12796 (3.9 it/s)
+[Epoch 8/10] step 1900/12796 (3.9 it/s)
+[Epoch 8/10] step 1950/12796 (3.9 it/s)
+[Epoch 8/10] step 2000/12796 (3.9 it/s)
+[Epoch 8/10] step 2050/12796 (3.9 it/s)
+[Epoch 8/10] step 2100/12796 (4.0 it/s)
+[Epoch 8/10] step 2150/12796 (4.0 it/s)
+[Epoch 8/10] step 2200/12796 (4.0 it/s)
+[Epoch 8/10] step 2250/12796 (4.0 it/s)
+[Epoch 8/10] step 2300/12796 (4.0 it/s)
+[Epoch 8/10] step 2350/12796 (4.0 it/s)
+[Epoch 8/10] step 2400/12796 (4.0 it/s)
+[Epoch 8/10] step 2450/12796 (4.0 it/s)
+[Epoch 8/10] step 2500/12796 (4.0 it/s)
+[Epoch 8/10] step 2550/12796 (4.0 it/s)
+[Epoch 8/10] step 2600/12796 (4.0 it/s)
+[Epoch 8/10] step 2650/12796 (4.0 it/s)
+[Epoch 8/10] step 2700/12796 (4.0 it/s)
+[Epoch 8/10] step 2750/12796 (4.0 it/s)
+[Epoch 8/10] step 2800/12796 (4.0 it/s)
+[Epoch 8/10] step 2850/12796 (4.0 it/s)
+[Epoch 8/10] step 2900/12796 (4.0 it/s)
+[Epoch 8/10] step 2950/12796 (4.0 it/s)
+[Epoch 8/10] step 3000/12796 (4.0 it/s)
+[Epoch 8/10] step 3050/12796 (4.0 it/s)
+[Epoch 8/10] step 3100/12796 (4.0 it/s)
+[Epoch 8/10] step 3150/12796 (4.0 it/s)
+[Epoch 8/10] step 3200/12796 (4.0 it/s)
+[Epoch 8/10] step 3250/12796 (3.9 it/s)
+[Epoch 8/10] step 3300/12796 (3.9 it/s)
+[Epoch 8/10] step 3350/12796 (3.9 it/s)
+[Epoch 8/10] step 3400/12796 (3.9 it/s)
+[Epoch 8/10] step 3450/12796 (3.9 it/s)
+[Epoch 8/10] step 3500/12796 (3.9 it/s)
+[Epoch 8/10] step 3550/12796 (3.9 it/s)
+[Epoch 8/10] step 3600/12796 (3.9 it/s)
+[Epoch 8/10] step 3650/12796 (3.9 it/s)
+[Epoch 8/10] step 3700/12796 (3.9 it/s)
+[Epoch 8/10] step 3750/12796 (3.9 it/s)
+[Epoch 8/10] step 3800/12796 (3.9 it/s)
+[Epoch 8/10] step 3850/12796 (3.9 it/s)
+[Epoch 8/10] step 3900/12796 (3.9 it/s)
+[Epoch 8/10] step 3950/12796 (3.9 it/s)
+[Epoch 8/10] step 4000/12796 (3.9 it/s)
+[Epoch 8/10] step 4050/12796 (3.9 it/s)
+[Epoch 8/10] step 4100/12796 (3.9 it/s)
+[Epoch 8/10] step 4150/12796 (3.9 it/s)
+[Epoch 8/10] step 4200/12796 (3.9 it/s)
+[Epoch 8/10] step 4250/12796 (3.9 it/s)
+[Epoch 8/10] step 4300/12796 (3.9 it/s)
+[Epoch 8/10] step 4350/12796 (3.9 it/s)
+[Epoch 8/10] step 4400/12796 (3.9 it/s)
+[Epoch 8/10] step 4450/12796 (3.9 it/s)
+[Epoch 8/10] step 4500/12796 (3.9 it/s)
+[Epoch 8/10] step 4550/12796 (3.9 it/s)
+[Epoch 8/10] step 4600/12796 (3.9 it/s)
+[Epoch 8/10] step 4650/12796 (3.9 it/s)
+[Epoch 8/10] step 4700/12796 (3.9 it/s)
+[Epoch 8/10] step 4750/12796 (3.9 it/s)
+[Epoch 8/10] step 4800/12796 (3.9 it/s)
+[Epoch 8/10] step 4850/12796 (3.9 it/s)
+[Epoch 8/10] step 4900/12796 (3.9 it/s)
+[Epoch 8/10] step 4950/12796 (3.9 it/s)
+[Epoch 8/10] step 5000/12796 (3.9 it/s)
+[Epoch 8/10] step 5050/12796 (3.9 it/s)
+[Epoch 8/10] step 5100/12796 (3.9 it/s)
+[Epoch 8/10] step 5150/12796 (3.9 it/s)
+[Epoch 8/10] step 5200/12796 (3.9 it/s)
+[Epoch 8/10] step 5250/12796 (3.9 it/s)
+[Epoch 8/10] step 5300/12796 (3.9 it/s)
+[Epoch 8/10] step 5350/12796 (3.9 it/s)
+[Epoch 8/10] step 5400/12796 (3.9 it/s)
+[Epoch 8/10] step 5450/12796 (3.9 it/s)
+[Epoch 8/10] step 5500/12796 (3.9 it/s)
+[Epoch 8/10] step 5550/12796 (3.9 it/s)
+[Epoch 8/10] step 5600/12796 (3.9 it/s)
+[Epoch 8/10] step 5650/12796 (3.9 it/s)
+[Epoch 8/10] step 5700/12796 (3.9 it/s)
+[Epoch 8/10] step 5750/12796 (3.9 it/s)
+[Epoch 8/10] step 5800/12796 (3.9 it/s)
+[Epoch 8/10] step 5850/12796 (3.9 it/s)
+[Epoch 8/10] step 5900/12796 (3.9 it/s)
+[Epoch 8/10] step 5950/12796 (3.9 it/s)
+[Epoch 8/10] step 6000/12796 (3.9 it/s)
+[Epoch 8/10] step 6050/12796 (3.9 it/s)
+[Epoch 8/10] step 6100/12796 (3.9 it/s)
+[Epoch 8/10] step 6150/12796 (3.9 it/s)
+[Epoch 8/10] step 6200/12796 (3.9 it/s)
+[Epoch 8/10] step 6250/12796 (3.9 it/s)
+[Epoch 8/10] step 6300/12796 (3.9 it/s)
+[Epoch 8/10] step 6350/12796 (3.9 it/s)
+[Epoch 8/10] step 6400/12796 (3.9 it/s)
+[Epoch 8/10] step 6450/12796 (3.9 it/s)
+[Epoch 8/10] step 6500/12796 (3.9 it/s)
+[Epoch 8/10] step 6550/12796 (3.9 it/s)
+[Epoch 8/10] step 6600/12796 (3.9 it/s)
+[Epoch 8/10] step 6650/12796 (3.9 it/s)
+[Epoch 8/10] step 6700/12796 (3.9 it/s)
+[Epoch 8/10] step 6750/12796 (3.9 it/s)
+[Epoch 8/10] step 6800/12796 (3.9 it/s)
+[Epoch 8/10] step 6850/12796 (3.9 it/s)
+[Epoch 8/10] step 6900/12796 (3.9 it/s)
+[Epoch 8/10] step 6950/12796 (3.9 it/s)
+[Epoch 8/10] step 7000/12796 (3.9 it/s)
+[Epoch 8/10] step 7050/12796 (3.9 it/s)
+[Epoch 8/10] step 7100/12796 (3.9 it/s)
+[Epoch 8/10] step 7150/12796 (3.9 it/s)
+[Epoch 8/10] step 7200/12796 (3.9 it/s)
+[Epoch 8/10] step 7250/12796 (3.9 it/s)
+[Epoch 8/10] step 7300/12796 (3.9 it/s)
+[Epoch 8/10] step 7350/12796 (3.9 it/s)
+[Epoch 8/10] step 7400/12796 (3.9 it/s)
+[Epoch 8/10] step 7450/12796 (3.9 it/s)
+[Epoch 8/10] step 7500/12796 (3.9 it/s)
+[Epoch 8/10] step 7550/12796 (3.9 it/s)
+[Epoch 8/10] step 7600/12796 (3.9 it/s)
+[Epoch 8/10] step 7650/12796 (3.9 it/s)
+[Epoch 8/10] step 7700/12796 (3.9 it/s)
+[Epoch 8/10] step 7750/12796 (3.9 it/s)
+[Epoch 8/10] step 7800/12796 (3.9 it/s)
+[Epoch 8/10] step 7850/12796 (3.9 it/s)
+[Epoch 8/10] step 7900/12796 (3.9 it/s)
+[Epoch 8/10] step 7950/12796 (3.9 it/s)
+[Epoch 8/10] step 8000/12796 (3.9 it/s)
+[Epoch 8/10] step 8050/12796 (3.9 it/s)
+[Epoch 8/10] step 8100/12796 (3.9 it/s)
+[Epoch 8/10] step 8150/12796 (3.9 it/s)
+[Epoch 8/10] step 8200/12796 (3.9 it/s)
+[Epoch 8/10] step 8250/12796 (3.9 it/s)
+[Epoch 8/10] step 8300/12796 (3.9 it/s)
+[Epoch 8/10] step 8350/12796 (3.9 it/s)
+[Epoch 8/10] step 8400/12796 (3.9 it/s)
+[Epoch 8/10] step 8450/12796 (3.9 it/s)
+[Epoch 8/10] step 8500/12796 (3.9 it/s)
+[Epoch 8/10] step 8550/12796 (3.9 it/s)
+[Epoch 8/10] step 8600/12796 (3.9 it/s)
+[Epoch 8/10] step 8650/12796 (3.9 it/s)
+[Epoch 8/10] step 8700/12796 (3.9 it/s)
+[Epoch 8/10] step 8750/12796 (3.9 it/s)
+[Epoch 8/10] step 8800/12796 (3.9 it/s)
+[Epoch 8/10] step 8850/12796 (3.9 it/s)
+[Epoch 8/10] step 8900/12796 (3.9 it/s)
+[Epoch 8/10] step 8950/12796 (3.9 it/s)
+[Epoch 8/10] step 9000/12796 (3.9 it/s)
+[Epoch 8/10] step 9050/12796 (3.9 it/s)
+[Epoch 8/10] step 9100/12796 (3.9 it/s)
+[Epoch 8/10] step 9150/12796 (3.9 it/s)
+[Epoch 8/10] step 9200/12796 (3.9 it/s)
+[Epoch 8/10] step 9250/12796 (3.9 it/s)
+[Epoch 8/10] step 9300/12796 (3.9 it/s)
+[Epoch 8/10] step 9350/12796 (3.9 it/s)
+[Epoch 8/10] step 9400/12796 (3.9 it/s)
+[Epoch 8/10] step 9450/12796 (3.9 it/s)
+[Epoch 8/10] step 9500/12796 (3.9 it/s)
+[Epoch 8/10] step 9550/12796 (3.9 it/s)
+[Epoch 8/10] step 9600/12796 (3.9 it/s)
+[Epoch 8/10] step 9650/12796 (3.9 it/s)
+[Epoch 8/10] step 9700/12796 (3.9 it/s)
+[Epoch 8/10] step 9750/12796 (3.9 it/s)
+[Epoch 8/10] step 9800/12796 (3.9 it/s)
+[Epoch 8/10] step 9850/12796 (3.9 it/s)
+[Epoch 8/10] step 9900/12796 (3.9 it/s)
+[Epoch 8/10] step 9950/12796 (3.9 it/s)
+[Epoch 8/10] step 10000/12796 (3.9 it/s)
+[Epoch 8/10] step 10050/12796 (3.9 it/s)
+[Epoch 8/10] step 10100/12796 (3.9 it/s)
+[Epoch 8/10] step 10150/12796 (3.9 it/s)
+[Epoch 8/10] step 10200/12796 (3.9 it/s)
+[Epoch 8/10] step 10250/12796 (3.8 it/s)
+[Epoch 8/10] step 10300/12796 (3.8 it/s)
+[Epoch 8/10] step 10350/12796 (3.8 it/s)
+[Epoch 8/10] step 10400/12796 (3.8 it/s)
+[Epoch 8/10] step 10450/12796 (3.8 it/s)
+[Epoch 8/10] step 10500/12796 (3.8 it/s)
+[Epoch 8/10] step 10550/12796 (3.9 it/s)
+[Epoch 8/10] step 10600/12796 (3.9 it/s)
+[Epoch 8/10] step 10650/12796 (3.9 it/s)
+[Epoch 8/10] step 10700/12796 (3.9 it/s)
+[Epoch 8/10] step 10750/12796 (3.9 it/s)
+[Epoch 8/10] step 10800/12796 (3.9 it/s)
+[Epoch 8/10] step 10850/12796 (3.9 it/s)
+[Epoch 8/10] step 10900/12796 (3.8 it/s)
+[Epoch 8/10] step 10950/12796 (3.8 it/s)
+[Epoch 8/10] step 11000/12796 (3.9 it/s)
+[Epoch 8/10] step 11050/12796 (3.9 it/s)
+[Epoch 8/10] step 11100/12796 (3.9 it/s)
+[Epoch 8/10] step 11150/12796 (3.9 it/s)
+[Epoch 8/10] step 11200/12796 (3.9 it/s)
+[Epoch 8/10] step 11250/12796 (3.9 it/s)
+[Epoch 8/10] step 11300/12796 (3.9 it/s)
+[Epoch 8/10] step 11350/12796 (3.8 it/s)
+[Epoch 8/10] step 11400/12796 (3.9 it/s)
+[Epoch 8/10] step 11450/12796 (3.9 it/s)
+[Epoch 8/10] step 11500/12796 (3.9 it/s)
+[Epoch 8/10] step 11550/12796 (3.9 it/s)
+[Epoch 8/10] step 11600/12796 (3.9 it/s)
+[Epoch 8/10] step 11650/12796 (3.9 it/s)
+[Epoch 8/10] step 11700/12796 (3.9 it/s)
+[Epoch 8/10] step 11750/12796 (3.9 it/s)
+[Epoch 8/10] step 11800/12796 (3.9 it/s)
+[Epoch 8/10] step 11850/12796 (3.9 it/s)
+[Epoch 8/10] step 11900/12796 (3.9 it/s)
+[Epoch 8/10] step 11950/12796 (3.9 it/s)
+[Epoch 8/10] step 12000/12796 (3.9 it/s)
+[Epoch 8/10] step 12050/12796 (3.9 it/s)
+[Epoch 8/10] step 12100/12796 (3.9 it/s)
+[Epoch 8/10] step 12150/12796 (3.9 it/s)
+[Epoch 8/10] step 12200/12796 (3.9 it/s)
+[Epoch 8/10] step 12250/12796 (3.9 it/s)
+[Epoch 8/10] step 12300/12796 (3.9 it/s)
+[Epoch 8/10] step 12350/12796 (3.9 it/s)
+[Epoch 8/10] step 12400/12796 (3.9 it/s)
+[Epoch 8/10] step 12450/12796 (3.9 it/s)
+[Epoch 8/10] step 12500/12796 (3.9 it/s)
+[Epoch 8/10] step 12550/12796 (3.9 it/s)
+[Epoch 8/10] step 12600/12796 (3.9 it/s)
+[Epoch 8/10] step 12650/12796 (3.9 it/s)
+[Epoch 8/10] step 12700/12796 (3.9 it/s)
+[Epoch 8/10] step 12750/12796 (3.9 it/s)
+13:19:53 | INFO  | trainer_inf~| \n+----------------------------+------------------------+
+|           Metric           |         Value          |
++----------------------------+------------------------+
+|          [0;34;40mfit/loss[0m          |  [0;32;40m0.10240492969751358[0m   |
+|       [0;34;40mfit/pred_loss[0m        |  [0;32;40m0.006701805628836155[0m  |
+|      [0;34;40mfit/sigreg_loss[0m       |         [0;32;40m1.0625[0m         |
+|    [0;34;40mhparams/lr_default_0[0m    | [0;32;40m1.2482103102229303e-06[0m |
+|       [0;34;40mvalidate/loss[0m        |  [0;32;40m0.12720483541488647[0m   |
+|    [0;34;40mvalidate/loss_epoch[0m     |  [0;32;40m0.12720483541488647[0m   |
+|     [0;34;40mvalidate/pred_loss[0m     | [0;32;40m0.0029758659657090902[0m  |
+|  [0;34;40mvalidate/pred_loss_epoch[0m  | [0;32;40m0.0029758659657090902[0m  |
+|    [0;34;40mvalidate/sigreg_loss[0m    |   [0;32;40m1.380350112915039[0m    |
+| [0;34;40mvalidate/sigreg_loss_epoch[0m |   [0;32;40m1.380350112915039[0m    |
++----------------------------+------------------------+
+[Epoch 8/10] done in 3689.3s
+13:19:54 | INFO  | checkpoint_~|   Checking for non PyTorch modules to save
+13:19:55 | INFO  | checkpoint_~|   Saved wandb resume info to checkpoint: {'id': 'lewm-cube-paper-v1', 'project': 'lewm-default', 'entity': 'jepa-experiments'}
+13:19:55 | INFO  | checkpoint_~|   Wrote /mmfs1/gscratch/rao/alexchin/le-wm/wandb_resume.json
+13:19:55 | INFO  | atomic_chec~| [atomic_save] → /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints/epoch=8-step=115164.ckpt
+13:19:55 | INFO  | atomic_chec~| [atomic_save] ✓ epoch=8-step=115164.ckpt saved (206.8 MiB, serialise=0.15s write=0.29s rename=0.2ms)
+13:19:55 | INFO  | checkpoint_~|   Checking for non PyTorch modules to save
+13:19:55 | INFO  | checkpoint_~|   Saved wandb resume info to checkpoint: {'id': 'lewm-cube-paper-v1', 'project': 'lewm-default', 'entity': 'jepa-experiments'}
+13:19:55 | INFO  | checkpoint_~|   Wrote /mmfs1/gscratch/rao/alexchin/le-wm/wandb_resume.json
+13:19:55 | INFO  | atomic_chec~| [atomic_save] → /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints/last.ckpt
+13:19:56 | INFO  | atomic_chec~| [atomic_save] ✓ last.ckpt saved (206.8 MiB, serialise=0.14s write=0.35s rename=0.3ms)
+[Epoch 9/10] step 50/12796 (2.8 it/s)
+[Epoch 9/10] step 100/12796 (3.4 it/s)
+[Epoch 9/10] step 150/12796 (3.5 it/s)
+[Epoch 9/10] step 200/12796 (3.6 it/s)
+[Epoch 9/10] step 250/12796 (3.7 it/s)
+[Epoch 9/10] step 300/12796 (3.7 it/s)
+[Epoch 9/10] step 350/12796 (3.8 it/s)
+[Epoch 9/10] step 400/12796 (3.8 it/s)
+[Epoch 9/10] step 450/12796 (3.8 it/s)
+[Epoch 9/10] step 500/12796 (3.8 it/s)
+[Epoch 9/10] step 550/12796 (3.8 it/s)
+[Epoch 9/10] step 600/12796 (3.9 it/s)
+[Epoch 9/10] step 650/12796 (3.9 it/s)
+[Epoch 9/10] step 700/12796 (3.9 it/s)
+[Epoch 9/10] step 750/12796 (3.9 it/s)
+[Epoch 9/10] step 800/12796 (3.9 it/s)
+[Epoch 9/10] step 850/12796 (3.9 it/s)
+[Epoch 9/10] step 900/12796 (3.9 it/s)
+[Epoch 9/10] step 950/12796 (3.9 it/s)
+[Epoch 9/10] step 1000/12796 (3.9 it/s)
+[Epoch 9/10] step 1050/12796 (3.9 it/s)
+[Epoch 9/10] step 1100/12796 (3.9 it/s)
+[Epoch 9/10] step 1150/12796 (3.9 it/s)
+[Epoch 9/10] step 1200/12796 (3.9 it/s)
+[Epoch 9/10] step 1250/12796 (3.9 it/s)
+[Epoch 9/10] step 1300/12796 (3.9 it/s)
+[Epoch 9/10] step 1350/12796 (3.9 it/s)
+[Epoch 9/10] step 1400/12796 (3.9 it/s)
+[Epoch 9/10] step 1450/12796 (3.9 it/s)
+[Epoch 9/10] step 1500/12796 (3.9 it/s)
+[Epoch 9/10] step 1550/12796 (3.9 it/s)
+[Epoch 9/10] step 1600/12796 (3.9 it/s)
+[Epoch 9/10] step 1650/12796 (3.9 it/s)
+[Epoch 9/10] step 1700/12796 (3.9 it/s)
+[Epoch 9/10] step 1750/12796 (3.9 it/s)
+[Epoch 9/10] step 1800/12796 (3.9 it/s)
+[Epoch 9/10] step 1850/12796 (3.9 it/s)
+[Epoch 9/10] step 1900/12796 (3.9 it/s)
+[Epoch 9/10] step 1950/12796 (3.9 it/s)
+[Epoch 9/10] step 2000/12796 (3.9 it/s)
+[Epoch 9/10] step 2050/12796 (3.9 it/s)
+[Epoch 9/10] step 2100/12796 (3.9 it/s)
+[Epoch 9/10] step 2150/12796 (3.9 it/s)
+[Epoch 9/10] step 2200/12796 (3.9 it/s)
+[Epoch 9/10] step 2250/12796 (3.9 it/s)
+[Epoch 9/10] step 2300/12796 (3.9 it/s)
+[Epoch 9/10] step 2350/12796 (3.9 it/s)
+[Epoch 9/10] step 2400/12796 (3.9 it/s)
+[Epoch 9/10] step 2450/12796 (3.9 it/s)
+[Epoch 9/10] step 2500/12796 (3.9 it/s)
+[Epoch 9/10] step 2550/12796 (3.9 it/s)
+[Epoch 9/10] step 2600/12796 (3.9 it/s)
+[Epoch 9/10] step 2650/12796 (3.9 it/s)
+[Epoch 9/10] step 2700/12796 (3.9 it/s)
+[Epoch 9/10] step 2750/12796 (3.9 it/s)
+[Epoch 9/10] step 2800/12796 (4.0 it/s)
+[Epoch 9/10] step 2850/12796 (4.0 it/s)
+[Epoch 9/10] step 2900/12796 (4.0 it/s)
+[Epoch 9/10] step 2950/12796 (4.0 it/s)
+[Epoch 9/10] step 3000/12796 (4.0 it/s)
+[Epoch 9/10] step 3050/12796 (3.9 it/s)
+[Epoch 9/10] step 3100/12796 (4.0 it/s)
+[Epoch 9/10] step 3150/12796 (4.0 it/s)
+[Epoch 9/10] step 3200/12796 (4.0 it/s)
+[Epoch 9/10] step 3250/12796 (4.0 it/s)
+[Epoch 9/10] step 3300/12796 (4.0 it/s)
+[Epoch 9/10] step 3350/12796 (4.0 it/s)
+[Epoch 9/10] step 3400/12796 (4.0 it/s)
+[Epoch 9/10] step 3450/12796 (4.0 it/s)
+[Epoch 9/10] step 3500/12796 (4.0 it/s)
+[Epoch 9/10] step 3550/12796 (4.0 it/s)
+[Epoch 9/10] step 3600/12796 (4.0 it/s)
+[Epoch 9/10] step 3650/12796 (4.0 it/s)
+[Epoch 9/10] step 3700/12796 (4.0 it/s)
+[Epoch 9/10] step 3750/12796 (4.0 it/s)
+[Epoch 9/10] step 3800/12796 (4.0 it/s)
+[Epoch 9/10] step 3850/12796 (4.0 it/s)
+[Epoch 9/10] step 3900/12796 (4.0 it/s)
+[Epoch 9/10] step 3950/12796 (4.0 it/s)
+[Epoch 9/10] step 4000/12796 (4.0 it/s)
+[Epoch 9/10] step 4050/12796 (4.0 it/s)
+[Epoch 9/10] step 4100/12796 (4.0 it/s)
+[Epoch 9/10] step 4150/12796 (4.0 it/s)
+[Epoch 9/10] step 4200/12796 (4.0 it/s)
+[Epoch 9/10] step 4250/12796 (4.0 it/s)
+[Epoch 9/10] step 4300/12796 (4.0 it/s)
+[Epoch 9/10] step 4350/12796 (4.0 it/s)
+[Epoch 9/10] step 4400/12796 (4.0 it/s)
+[Epoch 9/10] step 4450/12796 (4.0 it/s)
+[Epoch 9/10] step 4500/12796 (4.0 it/s)
+[Epoch 9/10] step 4550/12796 (4.0 it/s)
+[Epoch 9/10] step 4600/12796 (4.0 it/s)
+[Epoch 9/10] step 4650/12796 (4.0 it/s)
+[Epoch 9/10] step 4700/12796 (4.0 it/s)
+[Epoch 9/10] step 4750/12796 (4.0 it/s)
+[Epoch 9/10] step 4800/12796 (4.0 it/s)
+[Epoch 9/10] step 4850/12796 (4.0 it/s)

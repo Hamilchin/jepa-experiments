@@ -31,7 +31,7 @@ time cp /gscratch/rao/alexchin/stablewm/datasets/reacher.h5 $STABLEWM_HOME/datas
 echo "[$(date)] staging done; $(du -sh $STABLEWM_HOME)"
 
 # --- copy outputs back to durable storage on exit (success, error, or signal) ---
-SAVE_DIR=/gscratch/rao/alexchin/stablewm/runs/reacher/$SLURM_JOB_ID
+SAVE_DIR=/gscratch/rao/alexchin/stablewm/runs/reacher
 cleanup() {
   echo "[$(date)] cleanup: copying outputs to $SAVE_DIR"
   mkdir -p $SAVE_DIR

@@ -1,18 +1,18 @@
 
-real	1m18.200s
-user	0m0.006s
-sys	1m17.096s
+real	1m56.435s
+user	0m0.027s
+sys	1m55.128s
 wandb: WARNING The anonymous setting has no effect and will be removed in a future version.
 wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /mmfs1/home/alexchin/.netrc.
 wandb: Currently logged in as: hamilchin (jepa-experiments) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
 wandb: Tracking run with wandb version 0.26.1
-wandb: Run data is saved locally in wandb/run-20260511_111835-lewm-cube-paper-v1
+wandb: Run data is saved locally in wandb/run-20260511_112040-lewm-reacher-paper-v1
 wandb: Run `wandb offline` to turn off syncing.
-wandb: Resuming run lewm-cube-paper
+wandb: Resuming run lewm-reacher-paper
 wandb: ⭐️ View project at https://wandb.ai/jepa-experiments/lewm-default
-wandb: 🚀 View run at https://wandb.ai/jepa-experiments/lewm-default/runs/lewm-cube-paper-v1
+wandb: 🚀 View run at https://wandb.ai/jepa-experiments/lewm-default/runs/lewm-reacher-paper-v1
 /mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/connector.py:571: `precision=bf16` is supported for historical reasons but its usage is discouraged. Please set your precision to bf16-mixed instead!
-/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python train.py data=ogb trainer.max_epochs=10 wandb.config ...
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python train.py data=dmc trainer.max_epochs=10 wandb.config ...
 Using bfloat16 Automatic Mixed Precision (AMP)
 Adding 13 callbacks from entry point 'stablepretraining_callbacks': PrintProgressBar, ModuleRegistryCallback, LoggingCallback, EnvironmentDumpCallback, TrainerInfo, SklearnCheckpoint, WandbCheckpoint, TrackioCheckpoint, SwanLabCheckpoint, ModuleSummary, SLURMInfo, LogUnusedParametersOnce, HuggingFaceCheckpointCallback
 GPU available: True (cuda), used: True
@@ -22,9 +22,8 @@ TPU available: False, using: 0 TPU cores
 [rank: 0] Seed set to 0
 💡 Tip: For seamless cloud uploads and versioning, try installing [litmodels](https://pypi.org/project/litmodels/) to enable LitModelCheckpoint, which syncs automatically with the Lightning model registry.
 You are using a CUDA device ('NVIDIA L40S') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
-/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py:881: Checkpoint directory /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints exists and is not empty.
-/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py:881: Checkpoint directory /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints exists and is not empty.
-Restoring states from the checkpoint path at /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints/last.ckpt
+/mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/callbacks/model_checkpoint.py:881: Checkpoint directory /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024904/65019cf3d5c4/checkpoints exists and is not empty.
+Restoring states from the checkpoint path at /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024904/65019cf3d5c4/checkpoints/last.ckpt
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Loading `train_dataloader` to estimate number of stepping batches.
 /mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
@@ -33,7 +32,7 @@ Loading `train_dataloader` to estimate number of stepping batches.
 /mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lancedb/__init__.py:294: UserWarning: lance is not fork-safe. If you are using multiprocessing, use spawn instead.
   warnings.warn(
 /mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:242: Precision bf16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
-Restored all states from the checkpoint at /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024408/bec2ff032e56/checkpoints/last.ckpt
+Restored all states from the checkpoint at /mmfs1/gscratch/rao/alexchin/cache/stable-pretraining/runs/20260511/024904/65019cf3d5c4/checkpoints/last.ckpt
 /mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
 /mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 128. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
 /mmfs1/gscratch/rao/alexchin/le-wm/.venv/lib/python3.10/site-packages/lightning/pytorch/utilities/data.py:79: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 111. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.

@@ -31,7 +31,7 @@ time cp /gscratch/rao/alexchin/stablewm/datasets/ogbench/cube_single_expert.h5 $
 echo "[$(date)] staging done; $(du -sh $STABLEWM_HOME)"
 
 # --- copy outputs back to durable storage on exit (success, error, or signal) ---
-SAVE_DIR=/gscratch/rao/alexchin/stablewm/runs/cube/$SLURM_JOB_ID
+SAVE_DIR=/gscratch/rao/alexchin/stablewm/runs/cube
 cleanup() {
   echo "[$(date)] cleanup: copying outputs to $SAVE_DIR"
   mkdir -p $SAVE_DIR
