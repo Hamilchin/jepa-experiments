@@ -11,7 +11,8 @@
 1. **Low-level control — not the loss, world model, or cost — is the wall on OGBench antmaze/cube.** On the *same maze layout, same official navigate data, same world-model + CEM-MPC pipeline*, swapping the **ant** (8-DOF locomotion) for a **point mass** (2-D control) takes success from **0% → up to 63%**. We isolated this by re-rendering the official `pointmaze-medium-navigate-v0` state trajectories to pixels.
 2. **No planning strategy rescues antmaze.** Greedy, longer horizon, frequent replan, and subgoal/graph-search over the quasimetric *all* stay at **0% success** (progress 8–14% vs a **random floor of 8.9%**). This **falsified our own hypothesis** that short-horizon/greedy planning would unlock it.
 3. **On the solvable env, inverse-dynamics is the best loss (63%), not the quasimetric (47%)** — even though the **quasimetric has the best geodesic geometry** (ρ0.97). So **"better geodesic geometry ⇏ better planning."** We report this rather than the tidier story we expected.
-4. **Two negative results, reported plainly:** our subgoal/graph-search planner *hurt* in both envs; and SIGReg's static latent-distance looks like **noise** (ρ≈0) yet it still reaches 37% on point-maze — an inconsistency we flag rather than explain away.
+4. **The control wall is method-agnostic — confirmed by *two* method classes.** We also tried the evidence-identified fix: a **learned low-level controller** (goal-conditioned BC on the frozen latents). Same dichotomy as planning: **0% on the ant (4.3% progress, *below* random), 55% on the point mass.** So neither MPC *nor* imitation can drive ant locomotion from the visual world-model latents, while both navigate the point mass — pinning the bottleneck on 8-DOF locomotion control, robustly.
+5. **Negative results, reported plainly:** our subgoal/graph-search planner *hurt* in both envs; the BC controller failed on the ant; and SIGReg's static latent-distance looks like **noise** (ρ≈0) yet it still reaches 37% on point-maze — an inconsistency we flag rather than explain away.
 
 ### Final success / progress (n=125 = 25 episodes × 5 official tasks; `rh1` planner)
 
@@ -72,6 +73,16 @@ With control out of the way, the losses rank (success): **inv-dynamics 63.2 > qu
 - **SIGReg is the anomaly:** its static latent-distance is ~noise (ρ≈0, [fig 7](figures/fig7_pointmaze_sigreg_geometry.png)) yet it reaches 37%. We do **not** have a clean explanation — possibly the single-anchor, canonical-pose probe is unrepresentative of what the planner sees, so SIGReg's latent may carry usable position info the static probe missed. Flagged, not resolved.
 - **Subgoal/graph-search planner: negative result** in both envs (antmaze 8.2% < baseline 12.9%; point-maze 10.4% < plain 47.2%). As implemented, chaining subgoals over the quasimetric *hurts*; plain receding-horizon MPC is better. We are not claiming it as a useful technique.
 
+### Planning vs imitation: the same control wall (success%)
+
+| controller | antmaze (8-DOF) | point-maze (2-D) |
+|---|---|---|
+| random | 0% | 0% |
+| CEM-MPC (best loss) | 0% | 63.2% (inv-dyn) |
+| **learned BC controller (GCBC)** | **0%** (4.3% prog) | **55.2%** |
+
+Two completely different control methods — model-based planning and behavior cloning — show the *same* split: solve the point mass, fail on the ant. Notably the BC fit quality is similar on both (`bc_mse` 0.30 ant / 0.33 point), so this is **not** a BC mean-collapse artifact: a roughly-imitated action policy is *good enough* to push a point mass toward a goal, but ant locomotion has **no tolerance for imperfect actions** — it needs a precise coordinated gait. (BC pipeline validated by the 55% point-maze result, so the 0% on ant is real, not a bug.)
+
 ---
 
 ## 4. The methods, and an honest read on the "final" one
@@ -86,9 +97,10 @@ All five are anti-collapse/representation losses added to LeWM; details + update
 ---
 
 ## 5. What this means / next steps
-- **The world model and the losses are not the limiting factor on hard OGBench envs.** The single change the evidence says is needed is a **learned low-level controller** (a goal-/subgoal-conditioned policy, HIQL-style) replacing torque-space CEM-MPC. A learned distance head (quasimetric/inv-dyn) is the right *high-level*; it needs a competent *low-level*.
-- **Point-maze is the clean loss-iteration testbed** going forward (control is not a confound). Inverse-dynamics is the current best; understanding *why* SIGReg's near-noise geometry still navigates is an open thread.
-- Negative results to keep in mind: our subgoal planner hurt; greedy planning hurt.
+- **The world model and the losses are not the limiting factor on hard OGBench envs.** Confirmed: the point mass is solved by *both* MPC and BC on the same latents.
+- **But a learned controller is not a free fix** — naive GCBC on the visual latents *also* gets 0% on the ant. So the bottleneck is specifically **precise 8-DOF locomotion control**, and the likely culprits are the **visual latent's fidelity/temporal resolution** (frameskip-5, pixel-derived) being too coarse for motor control (OGBench's *state-based* GCBC reaches ~24% on antmaze with precise proprioception), and/or the need for a **more expressive (distributional) policy**. The honest next experiments: a **proprioceptive/state low-level controller under the visual high-level** (hybrid), finer frameskip, and a distributional policy — *not* "just add BC."
+- **Point-maze is the clean loss-iteration testbed** (control is not a confound). Inverse-dynamics is the current best (63%); *why* SIGReg's near-noise static geometry still navigates (37%) is an open thread.
+- Negative results to keep: subgoal planning hurt; greedy planning hurt; naive BC controller failed on the ant.
 
 ## Files
 - `README.md`, `figures/`. Code: `distance_heads.py` (MRN+QRL, contrastive, inv-dyn), `train.py` (`loss.reg_type`), `eval_ogbench.py` / `eval_ogbench_subgoal.py`, `scripts/data/render_states_to_visual.py` (state→pixels), `scripts/probes/{rollout_error,random_floor,maze_one_heatmap}.py` (the assumption-challenging probes). *(Code is in the working tree on `main`; not yet committed.)*
