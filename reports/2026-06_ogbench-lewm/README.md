@@ -297,8 +297,6 @@ already forming (vs. ≤ 0.16 for any frozen/post-hoc result).*
 
 ## Files
 - `README.md` — this report (renders on GitHub with the figures inline).
-- `LeWM_OGBench_report.pdf` — PDF rendering (built by `build_pdf.py`; no LaTeX needed).
-- `build_pdf.py` — regenerates the PDF directly from this `README.md`.
 - `figures/` — all figures (Fig 0a/0b render-parity, Fig 1–5).
 
 *Code that produced these (currently on `main`): `distance_heads.py` (the MRN quasimetric,
